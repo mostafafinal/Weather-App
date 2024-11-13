@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wezo</title>
+  </head>
+  <body class="metric">
+    <header class="weather-header">
+      <div class="weather-logo">
+        <h1 class="weather-logo-name">Wezo <span>App</span></h1>
+      </div>
+      <div class="weather-search">
+        <form class="form" autocomplete="off">
+          <div class="form-group">
+            <input
+              name="newLocationField"
+              id="newLocationField"
+              class="city-search-field"
+              placeholder="Search for new City" />
+            <button type="submit" id="submitForm" class="submit-form">
+              <span class="icon">search</span>
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="weather-local-time" id="localTime">
+        <span class="local-time hours"></span>
+        <span class="local-time divider">:</span>
+        <span class="local-time minutes"></span>
+        <span class="local-time divider">:</span>
+        <span class="local-time seconds"></span>
+      </div>
+      <button class="units">
+        <span class="unit-label">Unit</span><span id="unit">°C</span>
+      </button>
+    </header>
+    <main class="app">
+      <div class="weather-container">
+        <div class="image-background">
+          <img src="" alt="" />
+        </div>
+        <div class="weather-location">
+          <span class="location-time"></span>
+          <div class="location-city">
+            <span class="current-city">London</span>
+            <div class="region-coords">
+              <span class="current-coords"></span>
+              <span class="current-region"></span>
+            </div>
+            <span class="current-country"></span>
+            <div class="astro">
+              <span class="sunrise"
+                ><svg
+                  class="sunrise"
+                  width="24"
+                  height="22"
+                  viewBox="0 0 24 22"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M11.2929 0.292893C11.6834 -0.0976311 12.3166 -0.0976311 12.7071 0.292893L16.7071 4.29289C17.0976 4.68342 17.0976 5.31658 16.7071 5.70711C16.3166 6.09763 15.6834 6.09763 15.2929 5.70711L13 3.41421V8C13 8.55228 12.5523 9 12 9C11.4477 9 11 8.55228 11 8V3.41421L8.70711 5.70711C8.31658 6.09763 7.68342 6.09763 7.29289 5.70711C6.90237 5.31658 6.90237 4.68342 7.29289 4.29289L11.2929 0.292893ZM3.51262 8.51262C3.90314 8.1221 4.53631 8.1221 4.92683 8.51262L6.34683 9.93262C6.73736 10.3231 6.73736 10.9563 6.34683 11.3468C5.95631 11.7374 5.32314 11.7374 4.93262 11.3468L3.51262 9.92683C3.1221 9.53631 3.1221 8.90314 3.51262 8.51262ZM20.4875 8.51262C20.878 8.90314 20.878 9.53631 20.4875 9.92683L19.0675 11.3468C18.6769 11.7374 18.0438 11.7374 17.6532 11.3468C17.2627 10.9563 17.2627 10.3231 17.6532 9.93262L19.0732 8.51262C19.4638 8.1221 20.0969 8.1221 20.4875 8.51262ZM7.75736 12.7574C8.88258 11.6321 10.4087 11 12 11C13.5913 11 15.1174 11.6321 16.2426 12.7574C17.3679 13.8826 18 15.4087 18 17C18 17.5523 17.5523 18 17 18C16.4477 18 16 17.5523 16 17C16 15.9391 15.5786 14.9217 14.8284 14.1716C14.0783 13.4214 13.0609 13 12 13C10.9391 13 9.92172 13.4214 9.17157 14.1716C8.42143 14.9217 8 15.9391 8 17C8 17.5523 7.55228 18 7 18C6.44772 18 6 17.5523 6 17C6 15.4087 6.63214 13.8826 7.75736 12.7574ZM0 17C0 16.4477 0.447715 16 1 16H3C3.55228 16 4 16.4477 4 17C4 17.5523 3.55228 18 3 18H1C0.447715 18 0 17.5523 0 17ZM20 17C20 16.4477 20.4477 16 21 16H23C23.5523 16 24 16.4477 24 17C24 17.5523 23.5523 18 23 18H21C20.4477 18 20 17.5523 20 17ZM0 21C0 20.4477 0.447715 20 1 20H23C23.5523 20 24 20.4477 24 21C24 21.5523 23.5523 22 23 22H1C0.447715 22 0 21.5523 0 21Z"
+                    fill="black"></path>
+                </svg>
+              </span>
+              <span class="sunset"
+                ><svg
+                  class="sunset"
+                  width="24"
+                  height="22"
+                  viewBox="0 0 24 22"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M12 0C12.5523 0 13 0.447715 13 1V5.58579L15.2929 3.29289C15.6834 2.90237 16.3166 2.90237 16.7071 3.29289C17.0976 3.68342 17.0976 4.31658 16.7071 4.70711L12.7071 8.70711C12.3166 9.09763 11.6834 9.09763 11.2929 8.70711L7.29289 4.70711C6.90237 4.31658 6.90237 3.68342 7.29289 3.29289C7.68342 2.90237 8.31658 2.90237 8.70711 3.29289L11 5.58579V1C11 0.447715 11.4477 0 12 0ZM3.51262 8.51262C3.90314 8.1221 4.53631 8.1221 4.92683 8.51262L6.34683 9.93262C6.73736 10.3231 6.73736 10.9563 6.34683 11.3468C5.95631 11.7374 5.32314 11.7374 4.93262 11.3468L3.51262 9.92683C3.1221 9.53631 3.1221 8.90314 3.51262 8.51262ZM20.4875 8.51262C20.878 8.90314 20.878 9.53631 20.4875 9.92683L19.0675 11.3468C18.6769 11.7374 18.0438 11.7374 17.6532 11.3468C17.2627 10.9563 17.2627 10.3231 17.6532 9.93262L19.0732 8.51262C19.4638 8.1221 20.0969 8.1221 20.4875 8.51262ZM7.75736 12.7574C8.88258 11.6321 10.4087 11 12 11C13.5913 11 15.1174 11.6321 16.2426 12.7574C17.3679 13.8826 18 15.4087 18 17C18 17.5523 17.5523 18 17 18C16.4477 18 16 17.5523 16 17C16 15.9391 15.5786 14.9217 14.8284 14.1716C14.0783 13.4214 13.0609 13 12 13C10.9391 13 9.92172 13.4214 9.17157 14.1716C8.42143 14.9217 8 15.9391 8 17C8 17.5523 7.55228 18 7 18C6.44772 18 6 17.5523 6 17C6 15.4087 6.63214 13.8826 7.75736 12.7574ZM0 17C0 16.4477 0.447715 16 1 16H3C3.55228 16 4 16.4477 4 17C4 17.5523 3.55228 18 3 18H1C0.447715 18 0 17.5523 0 17ZM20 17C20 16.4477 20.4477 16 21 16H23C23.5523 16 24 16.4477 24 17C24 17.5523 23.5523 18 23 18H21C20.4477 18 20 17.5523 20 17ZM0 21C0 20.4477 0.447715 20 1 20H23C23.5523 20 24 20.4477 24 21C24 21.5523 23.5523 22 23 22H1C0.447715 22 0 21.5523 0 21Z"
+                    fill="black"></path>
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="weather-condition">
+          <div class="now">
+            <div class="weather-current-temp">
+              <div class="dual-value">
+                <span class="metric">
+                  <span class="value"></span><span class="unit">°</span>
+                </span>
+                <span class="imperial">
+                  <span class="value"></span><span class="unit">°</span>
+                </span>
+              </div>
+            </div>
+            <div class="weather-now-condition">
+              <img src="" alt="" class="current-icon" />
+              <span class="current-text"></span>
+            </div>
+          </div>
+        </div>
+        <div class="current-details">
+          <div class="current-humidity">
+            <div class="current-detail-icon">
+              <span class="icon"></span>
+              <span class="desc">Humidity</span>
+            </div>
+            <span class="value"></span>
+          </div>
+          <div class="current-wind">
+            <div class="current-detail-icon">
+              <span class="icon"></span> <span class="desc">Wind Speed</span>
+            </div>
+            <div class="current-wind-values">
+              <div class="dual-value">
+                <span class="metric"></span>
+                <span class="imperial"></span>
+              </div>
+            </div>
+          </div>
+          <div class="current-wind-dir">
+            <div class="current-detail-icon">
+              <span class="icon"></span>
+              <span class="desc">Wind Direction</span>
+            </div>
+            <span class="value"></span>
+          </div>
+          <div class="current-precipitation">
+            <div class="current-detail-icon">
+              <span class="icon"></span>
+              <span class="desc">Rain Amount</span>
+            </div>
+            <div class="current-precipitation-values">
+              <div class="dual-value">
+                <span class="metric"></span>
+                <span class="imperial"></span>
+              </div>
+            </div>
+          </div>
+          <div class="current-clouds">
+            <div class="current-detail-icon">
+              <span class="icon"></span>
+              <span class="desc">Cloud Coverage</span>
+            </div>
+            <span class="value"></span>
+          </div>
+          <div class="current-uv">
+            <div class="current-detail-icon">
+              <span class="icon"></span> <span class="desc">UV Index</span>
+            </div>
+            <span class="value"></span>
+          </div>
+        </div>
+      </div>
+      <div class="weather-hourly">
+        <div class="title">Next Hours</div>
+        <div class="weather-hours">
+          <div class="hour-card">
+            <div class="hour-date"></div>
+            <div class="hour-time"></div>
+            <img src="" class="icon" />
+            <h3 class="hour-condition"></h3>
+            <div class="hour-temp">
+              <i>device_thermostat</i>
+              <div class="dual-value">
+                <span class="metric"></span>
+                <span class="imperial"></span>
+              </div>
+            </div>
+            <div class="hour-precip">
+              <i>rainy</i>
+              <div class="rain-snow-chance">0%</div>
+            </div>
+            <div class="hour-wind">
+              <i>air</i>
+              <div class="dual-value">
+                <span class="metric"></span>
+                <span class="imperial"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="weather-daily">
+        <div class="title">Next Days</div>
+        <div class="weather-days">
+          <div class="day-card">
+            <div class="weather-card-date"></div>
+            <img src="" class="icon" />
+            <h3 class="weather-condition"></h3>
+            <div class="card-details">
+              <div class="card-temp-min">
+                <span class="temp-icon">lo</span>
+                <div class="dual-value">
+                  <span class="metric"></span>
+                  <span class="imperial"></span>
+                </div>
+              </div>
+              <span class="divider">|</span>
+              <div class="card-temp-max">
+                <span class="temp-icon">hi</span>
+                <div class="dual-value">
+                  <span class="metric"></span>
+                  <span class="imperial"></span>
+                </div>
+              </div>
+              <div class="day-precip">
+                <i>rainy</i>
+                <div class="rain-snow-chance">0%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- <div id="loader" class="loader">
+      <div class="loader-container">
+        <script
+          src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+          type="module"></script>
+        <dotlottie-player
+          src="https://lottie.host/9c625eef-2dce-403e-a69e-571f0ba566d9/aTihb3f1Sd.json"
+          background="transparent"
+          speed="1"
+          style="width: 300px; height: 300px"
+          loop=""
+          autoplay=""></dotlottie-player>
+      </div>
+    </div> -->
+    <footer>
+      Powered by
+      <a
+        href="https://www.weatherapi.com/"
+        target="_blank"
+        alt="Free Weather API"
+        >WeatherAPI.com</a
+      >
+    </footer>
+  </body>
+</html>
