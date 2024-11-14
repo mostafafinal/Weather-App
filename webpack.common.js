@@ -1,19 +1,24 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+import { resolve } from "path";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
 
-module.exports = {
+// Get the directory name from the current module's URL
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+export default {
   entry: "./src/main.js",
   output: {
     filename: "main.bundle.js",
-    path: path.resolve(__dirname, "dist"),
+    path: resolve(__dirname, "dist"),
     clean: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.html",
     }),
-    new MiniCssExtractPlugin(),
   ],
   module: {
     rules: [
@@ -23,11 +28,16 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
+        use: ["style-loader", "css-loader"],
       },
     ],
   },
   optimization: {
     minimize: true,
+    minimizer: [
+      new CssMinimizerPlugin({
+        test: /\.css$/i,
+      }),
+    ],
   },
 };
