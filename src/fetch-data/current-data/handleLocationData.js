@@ -1,4 +1,4 @@
-import fetchAllData from "./fetchAllData.js";
+import fetchAllData from "../fetchAllData.js";
 
 const data = await fetchAllData();
 
