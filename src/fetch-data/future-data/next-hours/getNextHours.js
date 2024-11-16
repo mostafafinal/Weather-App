@@ -1,4 +1,4 @@
-import fetchAllData from "../fetchAllData";
+import fetchAllData from "../../fetchAllData.js";
 
 const data = await fetchAllData();
 
@@ -10,7 +10,11 @@ function getCurrentDayNextHours() {
     (hour) => new Date(hour.time).getHours() > currentHour
   );
 
-  return nextHours;
+  const nextHoursWithDayTitle = nextHours.map((hour) => {
+    return { text: "Today", ...hour };
+  });
+
+  return nextHoursWithDayTitle;
 }
 
 function getRestOfNextHours() {
@@ -21,7 +25,11 @@ function getRestOfNextHours() {
     (hour) => new Date(hour.time).getHours() < currentHour
   );
 
-  return nextHours;
+  const nextHoursWithDayTitle = nextHours.map((hour) => {
+    return { text: "Tomorrow", ...hour };
+  });
+
+  return nextHoursWithDayTitle;
 }
 
 function getNextHours() {
