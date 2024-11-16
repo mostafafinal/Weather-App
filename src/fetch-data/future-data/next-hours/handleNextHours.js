@@ -1,31 +1,26 @@
 import { getNextHours } from "./getNextHours.js";
 
 function NeededDataHandler(hour) {
+  const getText = () => hour.text;
+  const getTime = () => hour.time;
+  const getConditionIcon = () => hour.condition.icon.match(/(\d+\.png)/)[0];
+  const getConditionText = () => hour.condition.text;
+  const getTempC = () => hour.temp_c;
+  const getTempF = () => hour.temp_f;
+  const getWindKph = () => hour.wind_kph;
+  const getWindMph = () => hour.wind_mph;
+  const getChanceOfSnow = () => hour.chance_of_snow;
+
   return {
-    getText() {
-      return hour.text;
-    },
-    getTime() {
-      return hour.time;
-    },
-    getConditionText() {
-      return hour.condition.text;
-    },
-    getTempC() {
-      return hour.temp_c;
-    },
-    getTempF() {
-      return hour.temp_f;
-    },
-    getWindKph() {
-      return hour.wind_kph;
-    },
-    getWindMph() {
-      return hour.wind_mph;
-    },
-    getChanceOfSnow() {
-      return hour.chance_of_snow;
-    },
+    getText,
+    getTime,
+    getConditionIcon,
+    getConditionText,
+    getTempC,
+    getTempF,
+    getWindKph,
+    getWindMph,
+    getChanceOfSnow,
   };
 }
 
