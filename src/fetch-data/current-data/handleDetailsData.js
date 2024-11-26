@@ -8,24 +8,24 @@ function handleDetailsData() {
       throw new Error("Error From The API Happens In Details Functionality");
     }
 
-    const humidity = () => data.current.humidity;
-    const windKph = () => data.current.wind_kph;
-    const windMph = () => data.current.wind_mph;
-    const windDirection = () => data.current.wind_dir;
-    const cloudCoverage = () => data.current.cloud;
-    const uvIndex = () => data.current.uv;
-    const rainAmountIn = () => data.current.precip_in;
-    const rainAmountmm = () => data.current.precip_mm;
+    const getHumidity = () => data.current.humidity;
+    const getWindKph = () => data.current.wind_kph;
+    const getWindMph = () => data.current.wind_mph;
+    const getWindDirection = () => data.current.wind_dir;
+    const getCloudCoverage = () => data.current.cloud;
+    const getUvIndex = () => data.current.uv;
+    const getRainAmountIn = () => data.current.precip_in;
+    const getRainAmountmm = () => data.current.precip_mm;
 
     return {
-      humidity,
-      windKph,
-      windMph,
-      windDirection,
-      cloudCoverage,
-      uvIndex,
-      rainAmountIn,
-      rainAmountmm,
+      getHumidity,
+      getWindKph,
+      getWindMph,
+      getWindDirection,
+      getCloudCoverage,
+      getUvIndex,
+      getRainAmountIn,
+      getRainAmountmm,
     };
   } catch (err) {
     alert(err);
