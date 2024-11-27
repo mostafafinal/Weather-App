@@ -2,7 +2,12 @@ import { getNextDays } from "./getNextDays.js";
 
 function NeededDataHandler(day) {
   const getDate = () => day.date;
-  const getConditionIcon = () => day.day.condition.icon.match(/(\d+\.png)/)[0];
+  const getConditionIcon = () =>
+    day.day.condition.icon
+      .match(/64x64\/(.+?)(?=\.[a-zA-Z]+$)/)[1]
+      .split("/")
+      .reverse()
+      .join("-");
   const getConditionText = () => day.day.condition.text;
   const getSnowChance = () => day.day.daily_will_it_snow;
   const getMinTempC = () => day.day.mintemp_c;

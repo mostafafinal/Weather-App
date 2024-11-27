@@ -3,7 +3,12 @@ import { getNextHours } from "./getNextHours.js";
 function NeededDataHandler(hour) {
   const getText = () => hour.text;
   const getTime = () => hour.time;
-  const getConditionIcon = () => hour.condition.icon.match(/(\d+\.png)/)[0];
+  const getConditionIcon = () =>
+    hour.condition.icon
+      .match(/64x64\/(.+?)(?=\.[a-zA-Z]+$)/)[1]
+      .split("/")
+      .reverse()
+      .join("-");
   const getConditionText = () => hour.condition.text;
   const getTempC = () => hour.temp_c;
   const getTempF = () => hour.temp_f;

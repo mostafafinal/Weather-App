@@ -19,7 +19,7 @@ function generateNextDays() {
     );
     const nextDaysConditionIcon = createElement("img", {
       class: "nextDays Icon",
-      src: `...`,
+      src: `/assets/icons/${day.getConditionIcon()}.svg`,
     });
     const nextDaysConditionText = createElement(
       "div",

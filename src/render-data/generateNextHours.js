@@ -23,7 +23,7 @@ function generateNextHours() {
     );
     const nextHoursConditionIcon = createElement("img", {
       class: "nextHours Icon",
-      src: `...`,
+      src: `/assets/icons/${hour.getConditionIcon()}.svg`,
     });
     const nextHoursConditionText = createElement(
       "div",
