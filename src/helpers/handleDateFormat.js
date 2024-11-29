@@ -31,10 +31,10 @@ function getFullTime(date) {
 
   if (date) {
     const hours = new Date(date).getHours().toString().padStart(2, "0");
-    return `${hours}:${minutes}:${seconds}`;
+    return `<span class="local-time hours">${hours}</span><span class="local-time divider">:</span><span class="local-time minutes">${minutes}</span><span class="local-time divider">:</span><span class="local-time hours">${seconds}</span>`;
   }
 
-  return `${hours}:${minutes}:${seconds}`;
+  return `<span class="local-time hours">${hours}</span><span class="local-time divider">:</span><span class="local-time minutes">${minutes}</span><span class="local-time divider">:</span><span class="local-time hours">${seconds}</span>`;
 }
 
 export { getFullDate, getFullTime };
