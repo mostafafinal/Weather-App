@@ -212,3 +212,150 @@ header {
   }
 }
 /* End Header */
+
+/* Start Weather Container */
+.wheather-container {
+  .title {
+    .title-text {
+    }
+    .title-refresh,
+    .title-locate {
+      .icon {
+      }
+    }
+  }
+  .weather-location {
+    .location-time {
+      sup {
+      }
+    }
+    .weather-location-city {
+      .current-city {
+      }
+      .region-coords {
+        .current-coords {
+        }
+        .current-region {
+        }
+      }
+      .current-country {
+      }
+      .sun-status {
+        span {
+          svg {
+          }
+        }
+      }
+    }
+  }
+  .weather-current {
+    .now {
+      .weather-current-temp {
+        .dual-value {
+          .metric {
+            .unit {
+            }
+          }
+          .imperial {
+            .unit {
+            }
+          }
+        }
+      }
+      .weather-current-condition {
+        .condition-icon {
+        }
+        .condition-text {
+        }
+      }
+    }
+  }
+  .weather-current-details {
+    .current-detial {
+      .current-detail-icon {
+        .icon {
+        }
+        .desc {
+        }
+      }
+      .detail-value {
+        .unit {
+        }
+      }
+    }
+  }
+}
+@container body (max-width: 47.9375rem) {
+  .wheather-container {
+    .title {
+      .title-text {
+      }
+      .title-refresh,
+      .title-locate {
+        .icon {
+        }
+      }
+    }
+    .weather-location {
+      .location-time {
+        sup {
+        }
+      }
+      .weather-location-city {
+        .current-city {
+        }
+        .region-coords {
+          .current-coords {
+          }
+          .current-region {
+          }
+        }
+        .current-country {
+        }
+        .sun-status {
+          span {
+            svg {
+            }
+          }
+        }
+      }
+    }
+    .weather-current {
+      .now {
+        .weather-current-temp {
+          .dual-value {
+            .metric {
+              .unit {
+              }
+            }
+            .imperial {
+              .unit {
+              }
+            }
+          }
+        }
+        .weather-current-condition {
+          .condition-icon {
+          }
+          .condition-text {
+          }
+        }
+      }
+    }
+    .weather-current-details {
+      .current-detial {
+        .current-detail-icon {
+          .icon {
+          }
+          .desc {
+          }
+        }
+        .detail-value {
+          .unit {
+          }
+        }
+      }
+    }
+  }
+}
+/* End Weather Container */
