@@ -34,3 +34,26 @@ function closeOpenedFields(e) {
 
 searchToggle.addEventListener("click", openSearchField);
 window.addEventListener("click", closeOpenedFields);
+
+const refreshBtn = document.querySelector(".title-refresh");
+refreshBtn.addEventListener("click", rotateBtn);
+
+function rotateBtn() {
+  this.style.transform = "rotate(360deg)";
+}
+
+const units = document.querySelector(".weather-header .units");
+units.addEventListener("click", changeUnits);
+
+function changeUnits() {
+  const bodyClass = document.body;
+  const unit = document.querySelector(`.${this.className} .unit `);
+
+  bodyClass.className === "metric"
+    ? (bodyClass.className = "imperial")
+    : (bodyClass.className = "metric");
+
+  unit.textContent === "°C"
+    ? (unit.textContent = "°F")
+    : (unit.textContent = "°C");
+}

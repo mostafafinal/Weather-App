@@ -70,6 +70,54 @@ h6 {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
 }
 
+body.metric {
+  .dual-value {
+    .metric {
+      transform: translateY(-100%);
+    }
+    .imperial {
+      transform: translateY(-100%);
+    }
+  }
+}
+body.imerial {
+  .dual-value {
+    .metric {
+      transform: translateY(0);
+    }
+    .imperial {
+      transform: translateY(0);
+    }
+  }
+}
+
+main {
+  padding: 0 300px;
+}
+@container body (max-width: 47.9375rem) {
+  main {
+    padding: 0 50px;
+  }
+}
+
+.dual-value {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  height: 7rem;
+  font-size: 6rem;
+  font-weight: 500;
+  .metric,
+  .imperial {
+    transition: transform 0.3s cubic-bezier(0.57, -0.57, 0.47, 1.05);
+  }
+  .unit {
+    vertical-align: top;
+    font-size: 5rem;
+    font-weight: 500;
+  }
+}
 /* End Global */
 
 /* Start Header */
@@ -209,47 +257,20 @@ header {
     .units {
       position: relative;
       right: 3.2rem;
+      width: 2.6625rem;
+      height: 2.6625rem;
       .unit-label {
         display: none;
       }
       .unit {
         margin-left: 0;
         padding: 0;
-        width: 2.6625rem;
-        height: 2.6625rem;
       }
     }
   }
 }
 /* End Header */
 
-main {
-  padding: 0 300px;
-}
-
-@container body (max-width: 47.9375rem) {
-  main {
-    padding: 0 50px;
-  }
-}
-.dual-value {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden;
-  height: 7rem;
-  font-size: 6rem;
-  font-weight: 500;
-  .metric,
-  .imperial {
-    transition: transform 0.3s cubic-bezier(0.57, -0.57, 0.47, 1.05);
-  }
-  .unit {
-    vertical-align: top;
-    font-size: 5rem;
-    font-weight: 500;
-  }
-}
 /* Start Weather Container */
 .weather-container {
   display: grid;
