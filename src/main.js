@@ -1,17 +1,18 @@
 import "./style.css";
 
 const searchToggle = document.querySelector(".submit-form");
+const searchContainer = document.querySelector(".weather-search");
 const searchField = document.querySelector(".city-search-field");
 
-function handleSearchField(e) {
+function openSearchField(e) {
   e.preventDefault();
 
   if (searchField.value === "") {
-    searchField.classList.toggle("show-search");
+    searchContainer.classList.toggle("show-search");
 
-    setTimeout(() => searchField.focus(), 100);
+    searchField.focus();
   } else {
-    searchField.classList.toggle("show-search");
+    searchContainer.classList.toggle("show-search");
 
     alert(searchField.value);
 
@@ -19,13 +20,17 @@ function handleSearchField(e) {
   }
 }
 
-function handleOpenFields(e) {
+function closeOpenedFields(e) {
   const searchIcon = document.querySelector(".form-search-icon");
 
-  if (e.target !== searchIcon && e.target !== searchField) {
-    searchField.classList.remove("show-search");
+  if (
+    e.target !== searchIcon &&
+    e.target !== searchContainer &&
+    e.target !== searchField
+  ) {
+    searchContainer.classList.remove("show-search");
   }
 }
 
-searchToggle.addEventListener("click", handleSearchField);
-window.addEventListener("click", handleOpenFields);
+searchToggle.addEventListener("click", openSearchField);
+window.addEventListener("click", closeOpenedFields);
