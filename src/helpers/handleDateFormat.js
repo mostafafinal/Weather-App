@@ -20,7 +20,7 @@ function getFullDate(date) {
   const yearUTC = new Date(date).getUTCFullYear();
   const dayNumber = new Date(date).getDate();
 
-  return `${dayUTC}, ${monthUTC}, ${dayNumber}<sub>th</sub>, ${yearUTC}, `;
+  return `${dayUTC}, ${monthUTC}, ${dayNumber}<sup>th</sup>, ${yearUTC}, `;
 }
 
 function getFullTime(date) {

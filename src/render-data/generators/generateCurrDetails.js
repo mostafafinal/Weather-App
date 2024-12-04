@@ -1,5 +1,5 @@
-import { handleDetailsData } from "../fetch-data/current-data/handleDetailsData.js";
-import { createElement } from "../helpers/createElement.js";
+import { handleDetailsData } from "../../fetch-data/current-data/handleDetailsData.js";
+import { createElement } from "../../helpers/createElement.js";
 
 const details = handleDetailsData();
 

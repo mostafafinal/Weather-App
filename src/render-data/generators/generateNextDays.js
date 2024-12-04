@@ -1,5 +1,5 @@
-import { handleNextDays } from "../fetch-data/future-data/next-days/handleNextDays.js";
-import { createElement } from "../helpers/createElement.js";
+import { handleNextDays } from "../../fetch-data/future-data/next-days/handleNextDays.js";
+import { createElement } from "../../helpers/createElement.js";
 
 const days = handleNextDays();
 

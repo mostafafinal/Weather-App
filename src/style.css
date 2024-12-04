@@ -333,9 +333,6 @@ header {
     font-size: 0.9rem;
     font-weight: 500;
     z-index: 2;
-    .location-time {
-      margin-bottom: 1.3rem;
-    }
     .weather-location-city {
       .current-city {
         font-size: 4rem;
@@ -460,9 +457,6 @@ header {
       }
     }
     .weather-location {
-      .location-time {
-        margin: 0;
-      }
       .weather-location-city {
         .current-city {
           font-size: 2rem;

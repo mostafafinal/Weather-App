@@ -1,4 +1,4 @@
-import { handleHeader } from "./handleHeader.js";
+import { handleHeader } from "./layout/handleHeader.js";
 
 function screenController() {
   handleHeader();

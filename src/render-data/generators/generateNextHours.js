@@ -1,5 +1,5 @@
-import { handleNextHours } from "../fetch-data/future-data/next-hours/handleNextHours.js";
-import { createElement } from "../helpers/createElement.js";
+import { handleNextHours } from "../../fetch-data/future-data/next-hours/handleNextHours.js";
+import { createElement } from "../../helpers/createElement.js";
 
 const hours = handleNextHours();
 
