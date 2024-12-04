@@ -1,12 +1,16 @@
 import { handleDetailsData } from "../../fetch-data/current-data/handleDetailsData.js";
 import { createElement } from "../../helpers/createElement.js";
 
-const details = handleDetailsData();
+const currentDetialsData = handleDetailsData();
 
 function createCardHeader(headerText, iconText) {
-  const header = createElement("div", { class: "detailsHeader" });
+  const header = createElement("div", { class: "current-detail-icon" });
 
-  const icon = createElement("span", { class: "icon" }, `${iconText}`);
+  const icon = createElement(
+    "span",
+    { class: "icon material-symbols-outlined" },
+    `${iconText}`
+  );
   const detailName = createElement("span", { class: "desc" }, `${headerText}`);
 
   header.append(icon, detailName);
@@ -25,33 +29,39 @@ function createCard(cardClass, headerText, iconText, content) {
 
 function generateCurrDetails() {
   const fragment = new DocumentFragment();
+  const currentDetails = document.querySelector(".weather-current-details");
 
   const humadityContent = createElement(
     "div",
-    { class: "currentHumadity" },
-    `${details.getHumidity()} <span class="unit">&#37;</span>`
+    { class: "detail-value humidity" },
+    `${currentDetialsData.getHumidity()} <span class="unit">&#37;</span>`
   );
   fragment.append(
-    createCard("humadityCard", "Humadity", "water_drop", humadityContent)
+    createCard(
+      "current-detail humidity",
+      "Humadity",
+      "water_drop",
+      humadityContent
+    )
   );
 
   const windSpeedContent = createElement(
     "div",
-    { class: "currentWindSpeed" },
-    `<i>air</i> <div class="dual-value"><span class="metric"> ${details.getWindKph()} kph</span><span class="imperial"> ${details.getWindMph()} mph</span></div>`
+    { class: "detail-value wind" },
+    `<div class="dual-value"><span class="metric"> ${currentDetialsData.getWindKph()} kph</span><span class="imperial"> ${currentDetialsData.getWindMph()} mph</span></div>`
   );
   fragment.append(
-    createCard("windSpeedCard", "Wind Speed", "air", windSpeedContent)
+    createCard("current-detail wind", "Wind Speed", "air", windSpeedContent)
   );
 
   const windDirectionContent = createElement(
     "div",
-    { class: "currentWindDirection" },
-    `${details.getWindDirection()}`
+    { class: "detail-value wind-dir" },
+    `${currentDetialsData.getWindDirection()}`
   );
   fragment.append(
     createCard(
-      "windDirectionCard",
+      "current-detail wind-dir",
       "Wind Direction",
       "air",
       windDirectionContent
@@ -60,21 +70,26 @@ function generateCurrDetails() {
 
   const rainAmountContent = createElement(
     "div",
-    { class: "currentRainAmount" },
-    `<i>air</i> <div class="dual-value"><span class="metric"> ${details.getRainAmountmm()} mm</span><span class="imperial"> ${details.getRainAmountIn()} in</span></div>`
+    { class: "detail-value precipitation" },
+    `<div class="dual-value"><span class="metric"> ${currentDetialsData.getRainAmountmm()} mm</span><span class="imperial"> ${currentDetialsData.getRainAmountIn()} in</span></div>`
   );
   fragment.append(
-    createCard("rainAmountCard", "Rain Amount", "rainy", rainAmountContent)
+    createCard(
+      "current-detail precipitation",
+      "Rain Amount",
+      "rainy",
+      rainAmountContent
+    )
   );
 
   const cloudCoverageContent = createElement(
     "div",
-    { class: "currentCloudCoverage" },
-    `${details.getCloudCoverage()} <span class="unit">&#37;</span>`
+    { class: "detail-value clouds" },
+    `${currentDetialsData.getCloudCoverage()} <span class="unit">&#37;</span>`
   );
   fragment.append(
     createCard(
-      "cloudCoverageCard",
+      "current-detail clouds",
       "Cloud Coverage",
       "cloud",
       cloudCoverageContent
@@ -83,14 +98,14 @@ function generateCurrDetails() {
 
   const uvIndexContent = createElement(
     "div",
-    { class: "currentUvIndex" },
-    `${details.getUvIndex()}`
+    { class: "detail-value uv" },
+    `${currentDetialsData.getUvIndex()}`
   );
   fragment.append(
-    createCard("uvIndexCard", "UV Index", "sunny", uvIndexContent)
+    createCard("current-detail uv", "UV Index", "sunny", uvIndexContent)
   );
 
-  return fragment;
+  currentDetails.append(fragment);
 }
 
 export { generateCurrDetails };
