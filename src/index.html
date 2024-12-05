@@ -6,7 +6,7 @@
     <title>Wezo</title>
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=air,cloud,my_location,rainy,refresh,search,sunny,water_drop,water_lux,wb_twilight" />
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=air,cloud,device_thermostat,my_location,rainy,refresh,search,sunny,water_drop,water_lux,wb_twilight" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -59,6 +59,761 @@
           <div class="now"></div>
         </div>
         <div class="weather-current-details"></div>
+      </section>
+      <section class="next-hours-container">
+        <div class="title">Next Hours</div>
+        <div class="next-hours" draggable="false">
+          <div class="hour-card">
+            <div class="hour-date">Today</div>
+            <div class="hour-time">21:00</div>
+            <img class="hour-icon" src="assets/icons/176-night.svg" />
+            <h3 class="hour-condition">Patchy rain nearby</h3>
+            <div class="hour-value temp">
+              <span class="material-symbols-outlined value-icon"
+                >device_thermostat</span
+              >
+              <div class="dual-value">
+                <span class="metric"> 16.9<span class="unit">°</span> </span>
+                <span class="imperial"> 62.5<span class="unit">°</span> </span>
+              </div>
+            </div>
+            <div class="hour-value percip">
+              <span class="material-symbols-outlined value-icon">rainy</span>
+              <div class="percip-value">66%</div>
+            </div>
+            <div class="hour-value wind">
+              <span class="material-symbols-outlined value-icon">air</span>
+              <div class="dual-value">
+                <span class="metric"> 11.9<span class="unit"> kph</span> </span>
+                <span class="imperial">
+                  7.4<span class="unit"> mph</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="hour-card">
+            <div class="hour-date">Today</div>
+            <div class="hour-time">22:00</div>
+            <img class="hour-icon" src="assets/icons/176-night.svg" />
+            <h3 class="hour-condition">Patchy rain nearby</h3>
+            <div class="hour-value temp">
+              <span class="material-symbols-outlined value-icon"
+                >device_thermostat</span
+              >
+              <div class="dual-value">
+                <span class="metric"> 16.3<span class="unit">°</span> </span>
+                <span class="imperial"> 61.3<span class="unit">°</span> </span>
+              </div>
+            </div>
+            <div class="hour-value percip">
+              <span class="material-symbols-outlined value-icon">rainy</span>
+              <div class="percip-value">81%</div>
+            </div>
+            <div class="hour-value wind">
+              <span class="material-symbols-outlined value-icon">air</span>
+              <div class="dual-value">
+                <span class="metric"> 9.7<span class="unit"> kph</span> </span>
+                <span class="imperial"> 6<span class="unit"> mph</span> </span>
+              </div>
+            </div>
+          </div>
+          <div class="hour-card">
+            <div class="hour-date">Today</div>
+            <div class="hour-time">23:00</div>
+            <img class="hour-icon" src="assets/icons/113-night.svg" />
+            <h3 class="hour-condition">Clear</h3>
+            <div class="hour-value temp">
+              <span class="material-symbols-outlined value-icon"
+                >device_thermostat</span
+              >
+              <div class="dual-value">
+                <span class="metric"> 15.8<span class="unit">°</span> </span>
+                <span class="imperial"> 60.4<span class="unit">°</span> </span>
+              </div>
+            </div>
+            <div class="hour-value percip">
+              <span class="material-symbols-outlined value-icon">rainy</span>
+              <div class="percip-value">0%</div>
+            </div>
+            <div class="hour-value wind">
+              <span class="material-symbols-outlined value-icon">air</span>
+              <div class="dual-value">
+                <span class="metric"> 8.3<span class="unit"> kph</span> </span>
+                <span class="imperial">
+                  5.1<span class="unit"> mph</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="hour-card">
+            <div class="hour-date">Tomorrow</div>
+            <div class="hour-time">00:00</div>
+            <img class="hour-icon" src="assets/icons/113-night.svg" />
+            <h3 class="hour-condition">Clear</h3>
+            <div class="hour-value temp">
+              <span class="material-symbols-outlined value-icon"
+                >device_thermostat</span
+              >
+              <div class="dual-value">
+                <span class="metric"> 15.3<span class="unit">°</span> </span>
+                <span class="imperial"> 59.6<span class="unit">°</span> </span>
+              </div>
+            </div>
+            <div class="hour-value percip">
+              <span class="material-symbols-outlined value-icon">rainy</span>
+              <div class="percip-value">0%</div>
+            </div>
+            <div class="hour-value wind">
+              <span class="material-symbols-outlined value-icon">air</span>
+              <div class="dual-value">
+                <span class="metric"> 6.5<span class="unit"> kph</span> </span>
+                <span class="imperial"> 4<span class="unit"> mph</span> </span>
+              </div>
+            </div>
+          </div>
+          <div class="hour-card">
+            <div class="hour-date">Tomorrow</div>
+            <div class="hour-time">01:00</div>
+            <img class="hour-icon" src="assets/icons/113-night.svg" />
+            <h3 class="hour-condition">Clear</h3>
+            <div class="hour-value temp">
+              <span class="material-symbols-outlined value-icon"
+                >device_thermostat</span
+              >
+              <div class="dual-value">
+                <span class="metric"> 15<span class="unit">°</span> </span>
+                <span class="imperial"> 59<span class="unit">°</span> </span>
+              </div>
+            </div>
+            <div class="hour-value percip">
+              <span class="material-symbols-outlined value-icon">rainy</span>
+              <div class="percip-value">0%</div>
+            </div>
+            <div class="hour-value wind">
+              <span class="material-symbols-outlined value-icon">air</span>
+              <div class="dual-value">
+                <span class="metric"> 6.1<span class="unit"> kph</span> </span>
+                <span class="imperial">
+                  3.8<span class="unit"> mph</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="hour-card">
+            <div class="hour-date">Tomorrow</div>
+            <div class="hour-time">02:00</div>
+            <img class="hour-icon" src="assets/icons/113-night.svg" />
+            <h3 class="hour-condition">Clear</h3>
+            <div class="hour-value temp">
+              <span class="material-symbols-outlined value-icon"
+                >device_thermostat</span
+              >
+              <div class="dual-value">
+                <span class="metric"> 14.7<span class="unit">°</span> </span>
+                <span class="imperial"> 58.5<span class="unit">°</span> </span>
+              </div>
+            </div>
+            <div class="hour-value percip">
+              <span class="material-symbols-outlined value-icon">rainy</span>
+              <div class="percip-value">0%</div>
+            </div>
+            <div class="hour-value wind">
+              <span class="material-symbols-outlined value-icon">air</span>
+              <div class="dual-value">
+                <span class="metric"> 5.4<span class="unit"> kph</span> </span>
+                <span class="imperial">
+                  3.4<span class="unit"> mph</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="hour-card">
+            <div class="hour-date">Tomorrow</div>
+            <div class="hour-time">03:00</div>
+            <img class="hour-icon" src="assets/icons/113-night.svg" />
+            <h3 class="hour-condition">Clear</h3>
+            <div class="hour-value temp">
+              <span class="material-symbols-outlined value-icon"
+                >device_thermostat</span
+              >
+              <div class="dual-value">
+                <span class="metric"> 14.5<span class="unit">°</span> </span>
+                <span class="imperial"> 58.1<span class="unit">°</span> </span>
+              </div>
+            </div>
+            <div class="hour-value percip">
+              <span class="material-symbols-outlined value-icon">rainy</span>
+              <div class="percip-value">0%</div>
+            </div>
+            <div class="hour-value wind">
+              <span class="material-symbols-outlined value-icon">air</span>
+              <div class="dual-value">
+                <span class="metric"> 5.4<span class="unit"> kph</span> </span>
+                <span class="imperial">
+                  3.4<span class="unit"> mph</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="hour-card">
+            <div class="hour-date">Tomorrow</div>
+            <div class="hour-time">04:00</div>
+            <img class="hour-icon" src="assets/icons/113-night.svg" />
+            <h3 class="hour-condition">Clear</h3>
+            <div class="hour-value temp">
+              <span class="material-symbols-outlined value-icon"
+                >device_thermostat</span
+              >
+              <div class="dual-value">
+                <span class="metric"> 14.3<span class="unit">°</span> </span>
+                <span class="imperial"> 57.7<span class="unit">°</span> </span>
+              </div>
+            </div>
+            <div class="hour-value percip">
+              <span class="material-symbols-outlined value-icon">rainy</span>
+              <div class="percip-value">0%</div>
+            </div>
+            <div class="hour-value wind">
+              <span class="material-symbols-outlined value-icon">air</span>
+              <div class="dual-value">
+                <span class="metric"> 5.8<span class="unit"> kph</span> </span>
+                <span class="imperial">
+                  3.6<span class="unit"> mph</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="hour-card">
+            <div class="hour-date">Tomorrow</div>
+            <div class="hour-time">05:00</div>
+            <img class="hour-icon" src="assets/icons/113-night.svg" />
+            <h3 class="hour-condition">Clear</h3>
+            <div class="hour-value temp">
+              <span class="material-symbols-outlined value-icon"
+                >device_thermostat</span
+              >
+              <div class="dual-value">
+                <span class="metric"> 14.1<span class="unit">°</span> </span>
+                <span class="imperial"> 57.3<span class="unit">°</span> </span>
+              </div>
+            </div>
+            <div class="hour-value percip">
+              <span class="material-symbols-outlined value-icon">rainy</span>
+              <div class="percip-value">0%</div>
+            </div>
+            <div class="hour-value wind">
+              <span class="material-symbols-outlined value-icon">air</span>
+              <div class="dual-value">
+                <span class="metric"> 5.8<span class="unit"> kph</span> </span>
+                <span class="imperial">
+                  3.6<span class="unit"> mph</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="hour-card">
+            <div class="hour-date">Tomorrow</div>
+            <div class="hour-time">06:00</div>
+            <img class="hour-icon" src="assets/icons/113-night.svg" />
+            <h3 class="hour-condition">Clear</h3>
+            <div class="hour-value temp">
+              <span class="material-symbols-outlined value-icon"
+                >device_thermostat</span
+              >
+              <div class="dual-value">
+                <span class="metric"> 13.9<span class="unit">°</span> </span>
+                <span class="imperial"> 57<span class="unit">°</span> </span>
+              </div>
+            </div>
+            <div class="hour-value percip">
+              <span class="material-symbols-outlined value-icon">rainy</span>
+              <div class="percip-value">0%</div>
+            </div>
+            <div class="hour-value wind">
+              <span class="material-symbols-outlined value-icon">air</span>
+              <div class="dual-value">
+                <span class="metric"> 5.4<span class="unit"> kph</span> </span>
+                <span class="imperial">
+                  3.4<span class="unit"> mph</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="hour-card">
+            <div class="hour-date">Tomorrow</div>
+            <div class="hour-time">07:00</div>
+            <img class="hour-icon" src="assets/icons/113-day.svg" />
+            <h3 class="hour-condition">Sunny</h3>
+            <div class="hour-value temp">
+              <span class="material-symbols-outlined value-icon"
+                >device_thermostat</span
+              >
+              <div class="dual-value">
+                <span class="metric"> 13.8<span class="unit">°</span> </span>
+                <span class="imperial"> 56.9<span class="unit">°</span> </span>
+              </div>
+            </div>
+            <div class="hour-value percip">
+              <span class="material-symbols-outlined value-icon">rainy</span>
+              <div class="percip-value">0%</div>
+            </div>
+            <div class="hour-value wind">
+              <span class="material-symbols-outlined value-icon">air</span>
+              <div class="dual-value">
+                <span class="metric"> 4.3<span class="unit"> kph</span> </span>
+                <span class="imperial">
+                  2.7<span class="unit"> mph</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="hour-card">
+            <div class="hour-date">Tomorrow</div>
+            <div class="hour-time">08:00</div>
+            <img class="hour-icon" src="assets/icons/113-day.svg" />
+            <h3 class="hour-condition">Sunny</h3>
+            <div class="hour-value temp">
+              <span class="material-symbols-outlined value-icon"
+                >device_thermostat</span
+              >
+              <div class="dual-value">
+                <span class="metric"> 15.3<span class="unit">°</span> </span>
+                <span class="imperial"> 59.5<span class="unit">°</span> </span>
+              </div>
+            </div>
+            <div class="hour-value percip">
+              <span class="material-symbols-outlined value-icon">rainy</span>
+              <div class="percip-value">0%</div>
+            </div>
+            <div class="hour-value wind">
+              <span class="material-symbols-outlined value-icon">air</span>
+              <div class="dual-value">
+                <span class="metric"> 4<span class="unit"> kph</span> </span>
+                <span class="imperial">
+                  2.5<span class="unit"> mph</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="hour-card">
+            <div class="hour-date">Tomorrow</div>
+            <div class="hour-time">09:00</div>
+            <img class="hour-icon" src="assets/icons/113-day.svg" />
+            <h3 class="hour-condition">Sunny</h3>
+            <div class="hour-value temp">
+              <span class="material-symbols-outlined value-icon"
+                >device_thermostat</span
+              >
+              <div class="dual-value">
+                <span class="metric"> 16.4<span class="unit">°</span> </span>
+                <span class="imperial"> 61.5<span class="unit">°</span> </span>
+              </div>
+            </div>
+            <div class="hour-value percip">
+              <span class="material-symbols-outlined value-icon">rainy</span>
+              <div class="percip-value">0%</div>
+            </div>
+            <div class="hour-value wind">
+              <span class="material-symbols-outlined value-icon">air</span>
+              <div class="dual-value">
+                <span class="metric"> 5<span class="unit"> kph</span> </span>
+                <span class="imperial">
+                  3.1<span class="unit"> mph</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="hour-card">
+            <div class="hour-date">Tomorrow</div>
+            <div class="hour-time">10:00</div>
+            <img class="hour-icon" src="assets/icons/113-day.svg" />
+            <h3 class="hour-condition">Sunny</h3>
+            <div class="hour-value temp">
+              <span class="material-symbols-outlined value-icon"
+                >device_thermostat</span
+              >
+              <div class="dual-value">
+                <span class="metric"> 17.5<span class="unit">°</span> </span>
+                <span class="imperial"> 63.5<span class="unit">°</span> </span>
+              </div>
+            </div>
+            <div class="hour-value percip">
+              <span class="material-symbols-outlined value-icon">rainy</span>
+              <div class="percip-value">0%</div>
+            </div>
+            <div class="hour-value wind">
+              <span class="material-symbols-outlined value-icon">air</span>
+              <div class="dual-value">
+                <span class="metric"> 5<span class="unit"> kph</span> </span>
+                <span class="imperial">
+                  3.1<span class="unit"> mph</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="hour-card">
+            <div class="hour-date">Tomorrow</div>
+            <div class="hour-time">11:00</div>
+            <img class="hour-icon" src="assets/icons/113-day.svg" />
+            <h3 class="hour-condition">Sunny</h3>
+            <div class="hour-value temp">
+              <span class="material-symbols-outlined value-icon"
+                >device_thermostat</span
+              >
+              <div class="dual-value">
+                <span class="metric"> 18.6<span class="unit">°</span> </span>
+                <span class="imperial"> 65.5<span class="unit">°</span> </span>
+              </div>
+            </div>
+            <div class="hour-value percip">
+              <span class="material-symbols-outlined value-icon">rainy</span>
+              <div class="percip-value">0%</div>
+            </div>
+            <div class="hour-value wind">
+              <span class="material-symbols-outlined value-icon">air</span>
+              <div class="dual-value">
+                <span class="metric"> 6.8<span class="unit"> kph</span> </span>
+                <span class="imperial">
+                  4.3<span class="unit"> mph</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="hour-card">
+            <div class="hour-date">Tomorrow</div>
+            <div class="hour-time">12:00</div>
+            <img class="hour-icon" src="assets/icons/113-day.svg" />
+            <h3 class="hour-condition">Sunny</h3>
+            <div class="hour-value temp">
+              <span class="material-symbols-outlined value-icon"
+                >device_thermostat</span
+              >
+              <div class="dual-value">
+                <span class="metric"> 19.7<span class="unit">°</span> </span>
+                <span class="imperial"> 67.5<span class="unit">°</span> </span>
+              </div>
+            </div>
+            <div class="hour-value percip">
+              <span class="material-symbols-outlined value-icon">rainy</span>
+              <div class="percip-value">0%</div>
+            </div>
+            <div class="hour-value wind">
+              <span class="material-symbols-outlined value-icon">air</span>
+              <div class="dual-value">
+                <span class="metric"> 8.3<span class="unit"> kph</span> </span>
+                <span class="imperial">
+                  5.1<span class="unit"> mph</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="hour-card">
+            <div class="hour-date">Tomorrow</div>
+            <div class="hour-time">13:00</div>
+            <img class="hour-icon" src="assets/icons/113-day.svg" />
+            <h3 class="hour-condition">Sunny</h3>
+            <div class="hour-value temp">
+              <span class="material-symbols-outlined value-icon"
+                >device_thermostat</span
+              >
+              <div class="dual-value">
+                <span class="metric"> 20.5<span class="unit">°</span> </span>
+                <span class="imperial"> 68.9<span class="unit">°</span> </span>
+              </div>
+            </div>
+            <div class="hour-value percip">
+              <span class="material-symbols-outlined value-icon">rainy</span>
+              <div class="percip-value">0%</div>
+            </div>
+            <div class="hour-value wind">
+              <span class="material-symbols-outlined value-icon">air</span>
+              <div class="dual-value">
+                <span class="metric"> 9.4<span class="unit"> kph</span> </span>
+                <span class="imperial">
+                  5.8<span class="unit"> mph</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="hour-card">
+            <div class="hour-date">Tomorrow</div>
+            <div class="hour-time">14:00</div>
+            <img class="hour-icon" src="assets/icons/113-day.svg" />
+            <h3 class="hour-condition">Sunny</h3>
+            <div class="hour-value temp">
+              <span class="material-symbols-outlined value-icon"
+                >device_thermostat</span
+              >
+              <div class="dual-value">
+                <span class="metric"> 21.2<span class="unit">°</span> </span>
+                <span class="imperial"> 70.2<span class="unit">°</span> </span>
+              </div>
+            </div>
+            <div class="hour-value percip">
+              <span class="material-symbols-outlined value-icon">rainy</span>
+              <div class="percip-value">0%</div>
+            </div>
+            <div class="hour-value wind">
+              <span class="material-symbols-outlined value-icon">air</span>
+              <div class="dual-value">
+                <span class="metric"> 9<span class="unit"> kph</span> </span>
+                <span class="imperial">
+                  5.6<span class="unit"> mph</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="hour-card">
+            <div class="hour-date">Tomorrow</div>
+            <div class="hour-time">15:00</div>
+            <img class="hour-icon" src="assets/icons/113-day.svg" />
+            <h3 class="hour-condition">Sunny</h3>
+            <div class="hour-value temp">
+              <span class="material-symbols-outlined value-icon"
+                >device_thermostat</span
+              >
+              <div class="dual-value">
+                <span class="metric"> 21.7<span class="unit">°</span> </span>
+                <span class="imperial"> 71.1<span class="unit">°</span> </span>
+              </div>
+            </div>
+            <div class="hour-value percip">
+              <span class="material-symbols-outlined value-icon">rainy</span>
+              <div class="percip-value">0%</div>
+            </div>
+            <div class="hour-value wind">
+              <span class="material-symbols-outlined value-icon">air</span>
+              <div class="dual-value">
+                <span class="metric"> 11.2<span class="unit"> kph</span> </span>
+                <span class="imperial">
+                  6.9<span class="unit"> mph</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="hour-card">
+            <div class="hour-date">Tomorrow</div>
+            <div class="hour-time">16:00</div>
+            <img class="hour-icon" src="assets/icons/113-day.svg" />
+            <h3 class="hour-condition">Sunny</h3>
+            <div class="hour-value temp">
+              <span class="material-symbols-outlined value-icon"
+                >device_thermostat</span
+              >
+              <div class="dual-value">
+                <span class="metric"> 21.7<span class="unit">°</span> </span>
+                <span class="imperial"> 71.1<span class="unit">°</span> </span>
+              </div>
+            </div>
+            <div class="hour-value percip">
+              <span class="material-symbols-outlined value-icon">rainy</span>
+              <div class="percip-value">0%</div>
+            </div>
+            <div class="hour-value wind">
+              <span class="material-symbols-outlined value-icon">air</span>
+              <div class="dual-value">
+                <span class="metric"> 11.5<span class="unit"> kph</span> </span>
+                <span class="imperial">
+                  7.2<span class="unit"> mph</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="hour-card">
+            <div class="hour-date">Tomorrow</div>
+            <div class="hour-time">17:00</div>
+            <img class="hour-icon" src="assets/icons/113-night.svg" />
+            <h3 class="hour-condition">Clear</h3>
+            <div class="hour-value temp">
+              <span class="material-symbols-outlined value-icon"
+                >device_thermostat</span
+              >
+              <div class="dual-value">
+                <span class="metric"> 20.5<span class="unit">°</span> </span>
+                <span class="imperial"> 68.9<span class="unit">°</span> </span>
+              </div>
+            </div>
+            <div class="hour-value percip">
+              <span class="material-symbols-outlined value-icon">rainy</span>
+              <div class="percip-value">0%</div>
+            </div>
+            <div class="hour-value wind">
+              <span class="material-symbols-outlined value-icon">air</span>
+              <div class="dual-value">
+                <span class="metric"> 11.9<span class="unit"> kph</span> </span>
+                <span class="imperial">
+                  7.4<span class="unit"> mph</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="hour-card">
+            <div class="hour-date">Tomorrow</div>
+            <div class="hour-time">18:00</div>
+            <img class="hour-icon" src="assets/icons/116-night.svg" />
+            <h3 class="hour-condition">Partly Cloudy</h3>
+            <div class="hour-value temp">
+              <span class="material-symbols-outlined value-icon"
+                >device_thermostat</span
+              >
+              <div class="dual-value">
+                <span class="metric"> 19.9<span class="unit">°</span> </span>
+                <span class="imperial"> 67.8<span class="unit">°</span> </span>
+              </div>
+            </div>
+            <div class="hour-value percip">
+              <span class="material-symbols-outlined value-icon">rainy</span>
+              <div class="percip-value">0%</div>
+            </div>
+            <div class="hour-value wind">
+              <span class="material-symbols-outlined value-icon">air</span>
+              <div class="dual-value">
+                <span class="metric"> 9<span class="unit"> kph</span> </span>
+                <span class="imperial">
+                  5.6<span class="unit"> mph</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="hour-card">
+            <div class="hour-date">Tomorrow</div>
+            <div class="hour-time">19:00</div>
+            <img class="hour-icon" src="assets/icons/116-night.svg" />
+            <h3 class="hour-condition">Partly Cloudy</h3>
+            <div class="hour-value temp">
+              <span class="material-symbols-outlined value-icon"
+                >device_thermostat</span
+              >
+              <div class="dual-value">
+                <span class="metric"> 19.3<span class="unit">°</span> </span>
+                <span class="imperial"> 66.7<span class="unit">°</span> </span>
+              </div>
+            </div>
+            <div class="hour-value percip">
+              <span class="material-symbols-outlined value-icon">rainy</span>
+              <div class="percip-value">0%</div>
+            </div>
+            <div class="hour-value wind">
+              <span class="material-symbols-outlined value-icon">air</span>
+              <div class="dual-value">
+                <span class="metric"> 15.5<span class="unit"> kph</span> </span>
+                <span class="imperial">
+                  9.6<span class="unit"> mph</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="hour-card">
+            <div class="hour-date">Tomorrow</div>
+            <div class="hour-time">20:00</div>
+            <img class="hour-icon" src="assets/icons/113-night.svg" />
+            <h3 class="hour-condition">Clear</h3>
+            <div class="hour-value temp">
+              <span class="material-symbols-outlined value-icon"
+                >device_thermostat</span
+              >
+              <div class="dual-value">
+                <span class="metric"> 18.2<span class="unit">°</span> </span>
+                <span class="imperial"> 64.7<span class="unit">°</span> </span>
+              </div>
+            </div>
+            <div class="hour-value percip">
+              <span class="material-symbols-outlined value-icon">rainy</span>
+              <div class="percip-value">0%</div>
+            </div>
+            <div class="hour-value wind">
+              <span class="material-symbols-outlined value-icon">air</span>
+              <div class="dual-value">
+                <span class="metric"> 19.8<span class="unit"> kph</span> </span>
+                <span class="imperial">
+                  12.3<span class="unit"> mph</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="hour-card">
+            <div class="hour-date">Tomorrow</div>
+            <div class="hour-time">21:00</div>
+            <img class="hour-icon" src="assets/icons/113-night.svg" />
+            <h3 class="hour-condition">Clear</h3>
+            <div class="hour-value temp">
+              <span class="material-symbols-outlined value-icon"
+                >device_thermostat</span
+              >
+              <div class="dual-value">
+                <span class="metric"> 17.4<span class="unit">°</span> </span>
+                <span class="imperial"> 63.4<span class="unit">°</span> </span>
+              </div>
+            </div>
+            <div class="hour-value percip">
+              <span class="material-symbols-outlined value-icon">rainy</span>
+              <div class="percip-value">0%</div>
+            </div>
+            <div class="hour-value wind">
+              <span class="material-symbols-outlined value-icon">air</span>
+              <div class="dual-value">
+                <span class="metric"> 17.6<span class="unit"> kph</span> </span>
+                <span class="imperial"> 11<span class="unit"> mph</span> </span>
+              </div>
+            </div>
+          </div>
+          <div class="hour-card">
+            <div class="hour-date">Tomorrow</div>
+            <div class="hour-time">22:00</div>
+            <img class="hour-icon" src="assets/icons/113-night.svg" />
+            <h3 class="hour-condition">Clear</h3>
+            <div class="hour-value temp">
+              <span class="material-symbols-outlined value-icon"
+                >device_thermostat</span
+              >
+              <div class="dual-value">
+                <span class="metric"> 17<span class="unit">°</span> </span>
+                <span class="imperial"> 62.6<span class="unit">°</span> </span>
+              </div>
+            </div>
+            <div class="hour-value percip">
+              <span class="material-symbols-outlined value-icon">rainy</span>
+              <div class="percip-value">0%</div>
+            </div>
+            <div class="hour-value wind">
+              <span class="material-symbols-outlined value-icon">air</span>
+              <div class="dual-value">
+                <span class="metric"> 15.5<span class="unit"> kph</span> </span>
+                <span class="imperial">
+                  9.6<span class="unit"> mph</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="hour-card">
+            <div class="hour-date">Tomorrow</div>
+            <div class="hour-time">23:00</div>
+            <img class="hour-icon" src="assets/icons/113-night.svg" />
+            <h3 class="hour-condition">Clear</h3>
+            <div class="hour-value temp">
+              <span class="material-symbols-outlined value-icon"
+                >device_thermostat</span
+              >
+              <div class="dual-value">
+                <span class="metric"> 16.6<span class="unit">°</span> </span>
+                <span class="imperial"> 61.9<span class="unit">°</span> </span>
+              </div>
+            </div>
+            <div class="hour-value percip">
+              <span class="material-symbols-outlined value-icon">rainy</span>
+              <div class="percip-value">0%</div>
+            </div>
+            <div class="hour-value wind">
+              <span class="material-symbols-outlined value-icon">air</span>
+              <div class="dual-value">
+                <span class="metric"> 16.6<span class="unit"> kph</span> </span>
+                <span class="imperial">
+                  10.3<span class="unit"> mph</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
     <!-- <div id="loader" class="loader">

@@ -14,19 +14,23 @@
   &::after {
     box-sizing: border-box;
   }
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 body {
   font-family: "Poppins", serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  background: linear-gradient(
+  /* background: linear-gradient(
     to bottom,
     #11111d 7%,
     #182d53 49%,
     #3f62bd 70%,
     #5a7fb6 98%
-  );
+  ); */
+  background-color: #99d8ff;
   color: var(--text-color);
   height: 1000vh;
   padding-top: 60px;
@@ -92,7 +96,7 @@ body.imerial {
 }
 
 main {
-  padding: 0 300px;
+  padding: 0 290px;
 }
 @container body (max-width: 47.9375rem) {
   main {
@@ -130,7 +134,7 @@ header {
   transform: translateX(-50%);
   backdrop-filter: var(--backdrop);
   gap: 1rem;
-  padding: 0px 300px;
+  padding: 0px 290px;
   height: 60px;
   width: 100%;
   left: 50%;
@@ -270,7 +274,45 @@ header {
   }
 }
 /* End Header */
-
+.title {
+  grid-area: title;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1.3rem;
+  z-index: 2;
+  font-size: 1.7rem;
+  font-weight: 600;
+  .title-refresh,
+  .title-locate {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--btns-bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--btns-bg-color);
+    transition: transform 0.3s ease-out;
+    width: 2.1rem;
+    height: 2.1rem;
+    padding: 7px;
+    border-radius: 50%;
+    .icon {
+      font-size: 1.3125rem;
+    }
+  }
+}
+@container body (max-width: 47.9375rem) {
+  .title {
+    font-size: 1rem;
+    .title-refresh {
+      margin-left: auto;
+    }
+    .title-locate {
+      margin-left: 1rem;
+    }
+  }
+}
 /* Start Weather Container */
 .weather-container {
   display: grid;
@@ -295,36 +337,7 @@ header {
       width: 100%;
     }
   }
-  .title {
-    grid-area: title;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    margin-bottom: 1.3rem;
-    z-index: 2;
-    .title-text {
-      font-size: 1.7rem;
-      font-weight: 600;
-    }
-    .title-refresh,
-    .title-locate {
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: var(--btns-bg-color);
-      color: var(--text-color);
-      border: 1px solid var(--btns-bg-color);
-      transition: transform 0.3s ease-out;
-      width: 2.1rem;
-      height: 2.1rem;
-      padding: 7px;
-      border-radius: 50%;
-      .icon {
-        font-size: 1.3125rem;
-      }
-    }
-  }
+
   .weather-location {
     grid-area: w-location;
     display: flex;
@@ -445,17 +458,6 @@ header {
         object-fit: cover;
       }
     }
-    .title {
-      .title-text {
-        font-size: 1rem;
-      }
-      .title-refresh {
-        margin-left: auto;
-      }
-      .title-locate {
-        margin-left: 1rem;
-      }
-    }
     .weather-location {
       .weather-location-city {
         .current-city {
@@ -518,3 +520,69 @@ header {
   }
 }
 /* End Weather Container */
+
+/* Start Weather Hours Container */
+.next-hours-container {
+  .title {
+    margin-top: 1rem;
+  }
+  .next-hours {
+    cursor: grab;
+    user-select: none;
+    display: flex;
+    overflow: scroll hidden;
+    transition: transform 0.3s ease-in;
+    gap: 0.5rem;
+    &.active {
+      transform: scale(1.01);
+    }
+    .hour-card {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      backdrop-filter: blur(3px);
+      background-color: rgba(36, 36, 62, 0.2);
+      gap: 0.4rem;
+      border-radius: 14px;
+      flex-shrink: 0;
+      font-weight: 500;
+      padding: 14px;
+      width: 7.875rem;
+      .hour-icon {
+        width: 98px;
+        height: 98px;
+      }
+      .hour-condition {
+        font-size: 1rem;
+        font-weight: 500;
+        flex-grow: 1;
+      }
+      .hour-value {
+        display: flex;
+        gap: 0.4rem;
+        .dual-value {
+          height: 1.4rem;
+          .metric,
+          .imperial,
+          .unit {
+            font-size: 1rem;
+          }
+        }
+        &.temp,
+        &.percip {
+          margin-bottom: 0.875rem;
+        }
+      }
+    }
+  }
+}
+@container body (max-width: 47.9375rem) {
+  .next-hours-container {
+    .title {
+      display: flex;
+      justify-content: center;
+      margin-top: 0;
+    }
+  }
+}
+/* End Weather Hours Container */
