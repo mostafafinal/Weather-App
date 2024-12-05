@@ -2,7 +2,7 @@ import { getNextHours } from "./getNextHours.js";
 
 function NeededDataHandler(hour) {
   const getText = () => hour.text;
-  const getTime = () => hour.time;
+  const getTime = () => `${new Date(hour.time).getHours()}:00`;
   const getConditionIcon = () =>
     hour.condition.icon
       .match(/64x64\/(.+?)(?=\.[a-zA-Z]+$)/)[1]
