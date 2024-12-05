@@ -1,49 +1,57 @@
 import { handleNextHours } from "../../fetch-data/future-data/next-hours/handleNextHours.js";
 import { createElement } from "../../helpers/createElement.js";
 
-const hours = handleNextHours();
+const nextHoursData = handleNextHours();
 
 function generateNextHours() {
   const fragment = new DocumentFragment();
-  const nextHoursCardContainer = createElement("div", {
-    class: "nextHoursContainer",
-  });
+  const nextHoursCardContainer = document.querySelector(".next-hours");
 
-  hours.forEach((hour) => {
-    const nextHoursCard = createElement("div", { class: "nextHoursCard" });
+  nextHoursData.forEach((hour) => {
+    const nextHoursCard = createElement("div", { class: "hour-card" });
+
     const nextHoursDay = createElement(
       "div",
-      { class: "nextHoursDay" },
+      { class: "hour-date" },
       `${hour.getText()}`
     );
     const nextHoursTime = createElement(
       "div",
-      { class: "nextHoursTime" },
+      { class: "hour-time" },
       `${hour.getTime()}`
     );
     const nextHoursConditionIcon = createElement("img", {
-      class: "nextHours Icon",
+      class: "hour-icon",
       src: `/assets/icons/${hour.getConditionIcon()}.svg`,
     });
     const nextHoursConditionText = createElement(
-      "div",
-      { class: "nextHoursText" },
+      "h3",
+      { class: "hour-condition" },
       `${hour.getConditionText()}`
     );
     const nextHoursTemp = createElement(
       "div",
-      { class: "nextHoursTemp" },
-      `<i>device_thermostat</i> <div class="dual-value"><span class="metric"> ${hour.getTempF()} <span class="unit">&deg;</span></span><span class="imperial"> ${hour.getTempC()} <span class="unit">&deg;</span></span></div>`
+      { class: "hour-value temp" },
+      `<span class="material-symbols-outlined value-icon">device_thermostat</span>
+        <div class="dual-value">
+          <span class="metric">${hour.getTempF()}<span class="unit">°</span></span>
+          <span class="imperial">${hour.getTempC()}<span class="unit">°</span></span>
+        </div>`
     );
     const nextHoursSnowChance = createElement(
       "div",
-      { class: "nextHoursSnowChance" },
-      `<i>rainy</i> <div class="value">${hour.getChanceOfSnow()}</div>`
+      { class: "hour-value percip" },
+      `<span class="material-symbols-outlined value-icon">rainy</span>
+        <div class="percip-value">${hour.getChanceOfSnow()}</div>`
     );
     const nextHoursWindSpeed = createElement(
       "div",
-      { class: "nextHoursWindSpeed" },
-      `<i>air</i> <div class="dual-value"><span class="metric"> ${hour.getWindKph()} kph</span><span class="imperial"> ${hour.getWindMph()} mph</span></div>`
+      { class: "hour-value wind" },
+      `<span class="material-symbols-outlined value-icon">air</span>
+      <div class="dual-value">
+        <span class="metric">${hour.getWindKph()}<span class="unit">kph</span></span>
+        <span class="imperial">${hour.getWindMph()}<span class="unit">mph</span></span>
+      </div>`
     );
 
     nextHoursCard.append(
