@@ -1,7 +1,8 @@
+import { getFullDate } from "../../../helpers/handleDateFormat.js";
 import { getNextDays } from "./getNextDays.js";
 
 function NeededDataHandler(day) {
-  const getDate = () => day.date;
+  const getDate = () => getFullDate(day.date);
   const getConditionIcon = () =>
     day.day.condition.icon
       .match(/64x64\/(.+?)(?=\.[a-zA-Z]+$)/)[1]
