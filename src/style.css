@@ -586,3 +586,82 @@ header {
   }
 }
 /* End Weather Hours Container */
+
+/* Start Weather Days Container */
+.next-days-container {
+  .title {
+    margin-top: 1rem;
+  }
+  .next-days {
+    cursor: grab;
+    user-select: none;
+    display: flex;
+    overflow: scroll hidden;
+    gap: 0.5rem;
+    &.grab-scroll {
+      cursor: grabbing;
+    }
+    .day-card {
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      backdrop-filter: blur(3px);
+      background-color: rgba(36, 36, 62, 0.2);
+      gap: 0.4rem;
+      border-radius: 14px;
+      flex-shrink: 0;
+      flex-grow: 1;
+      font-weight: 500;
+      padding: 15px;
+      width: 13.125rem;
+      .day-icon {
+        width: 100px;
+        height: 100px;
+      }
+      .day-condition {
+        margin-bottom: 0.875rem;
+        font-weight: 600;
+        flex-grow: 1;
+      }
+      .day-details {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        column-gap: 0.125rem;
+        row-gap: 1.3rem;
+        .detail {
+          display: flex;
+          .dual-value {
+            margin-left: 0.25rem;
+            height: 1.4rem;
+            .metric,
+            .imperial,
+            .unit {
+              font-size: 1rem;
+            }
+          }
+          .detail-value {
+            margin-left: 0.25rem;
+          }
+        }
+        .detail-icon,
+        .detail-divider {
+          opacity: 0.42;
+          margin-left: 0.25rem;
+        }
+      }
+    }
+  }
+}
+@container body (max-width: 47.9375rem) {
+  .next-days-container {
+    .title {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+/* Ens Weather Days Container */
