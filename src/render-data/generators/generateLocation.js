@@ -9,7 +9,7 @@ function handleLocationTime(element) {
     () =>
       (element.innerHTML = `${getFullDate(
         locationData.localTime()
-      )}${getFullTime(locationData.localTime())}`),
+      )}, ${getFullTime(locationData.localTime())}`),
     1000
   );
 }
