@@ -246,7 +246,7 @@ header {
       width: 2.5rem;
       z-index: 2;
       &.show-search {
-        width: calc(100% - 6.2rem);
+        width: calc(100% - 6.1rem);
       }
       .form {
         width: 100%;
@@ -261,8 +261,8 @@ header {
     .units {
       position: relative;
       right: 3.2rem;
-      width: 2.6625rem;
-      height: 2.6625rem;
+      width: 2.4625rem;
+      height: 2.4625rem;
       .unit-label {
         display: none;
       }
@@ -531,12 +531,12 @@ header {
     user-select: none;
     display: flex;
     overflow: scroll hidden;
-    transition: transform 0.3s ease-in;
     gap: 0.5rem;
-    &.active {
-      transform: scale(1.01);
+    &.grab-scroll {
+      cursor: grabbing;
     }
     .hour-card {
+      pointer-events: none;
       display: flex;
       flex-direction: column;
       text-align: center;
