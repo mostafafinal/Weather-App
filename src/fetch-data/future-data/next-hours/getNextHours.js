@@ -1,6 +1,4 @@
-import fetchAllData from "../../fetchAllData.js";
-
-const data = await fetchAllData();
+import data from "../../handleWeatherData.js";
 
 function getCurrentDayNextHours() {
   const currentHour = new Date(data.current.last_updated).getHours();
