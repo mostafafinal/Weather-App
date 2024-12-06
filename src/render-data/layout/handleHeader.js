@@ -37,9 +37,15 @@ function changeUnits() {
   const bodyClass = document.body;
   const unit = document.querySelector(`.${this.className} .unit `);
 
-  bodyClass.className === "metric"
-    ? (bodyClass.className = "imperial")
-    : (bodyClass.className = "metric");
+  if (bodyClass.className.includes("metric")) {
+    bodyClass.classList.remove("metric");
+
+    bodyClass.classList.add("imperial");
+  } else if (bodyClass.className.includes("imperial")) {
+    bodyClass.classList.remove("imperial");
+
+    bodyClass.classList.add("metric");
+  }
 
   unit.textContent === "°C"
     ? (unit.textContent = "°F")
