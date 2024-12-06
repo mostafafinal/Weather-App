@@ -23,14 +23,6 @@ body {
   font-family: "Poppins", serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  /* background: linear-gradient(
-    to bottom,
-    #11111d 7%,
-    #182d53 49%,
-    #3f62bd 70%,
-    #5a7fb6 98%
-  ); */
-  background-color: #99d8ff;
   color: var(--text-color);
   height: 1000vh;
   padding-top: 60px;
@@ -93,6 +85,29 @@ body.imerial {
       transform: translateY(0);
     }
   }
+}
+
+body .day-night-gradient-background {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    #11111d 7%,
+    #182d53 49%,
+    #3f62bd 70%,
+    #5a7fb6 98%
+  );
+  z-index: 0;
+  height: 200%;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  top: -100%;
+  opacity: 1;
+}
+
+body.night .day-night-gradient-background {
+  top: 0;
 }
 
 main {
