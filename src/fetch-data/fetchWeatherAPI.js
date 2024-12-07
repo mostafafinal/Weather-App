@@ -17,6 +17,7 @@ const fetchWeatherAPI = async (location = "cairo") => {
     const allWeatherData = await hitAPI.json();
 
     weatherData.setData(allWeatherData);
+    updateScreen();
   } catch (err) {
     console.log(err);
   }
