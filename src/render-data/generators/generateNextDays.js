@@ -1,9 +1,9 @@
 import { handleNextDays } from "../../fetch-data/future-data/next-days/handleNextDays.js";
 import { createElement } from "../../helpers/createElement.js";
 
-const nextDaysData = handleNextDays();
+function generateNextDays(data) {
+  const nextDaysData = handleNextDays(data);
 
-function generateNextDays() {
   const fragment = new DocumentFragment();
   const nextDaysCardContainer = document.querySelector(".next-days");
 

@@ -1,8 +1,6 @@
-import data from "../handleWeatherData.js";
+import weatherState from "../weatherState.js";
 
 const handleConditionText = (conditionText) => {
-  console.log(conditionText);
-
   if (conditionText.split(" ").length === 1) {
     return conditionText;
   }
@@ -20,7 +18,7 @@ const handleConditionText = (conditionText) => {
   return conditionText.split(" ").join("_");
 };
 
-const handleBackgroundData = () => {
+const handleBackgroundData = (data) => {
   const condition = data.current.condition.text.toLowerCase();
   const dayMode = data.current.condition.icon.match(/\/([^/]+)\/[^/]+$/)[1];
 
@@ -29,5 +27,7 @@ const handleBackgroundData = () => {
 
   return { getBgImage, getBgMode };
 };
+
+weatherState.subscribe(handleBackgroundData);
 
 export { handleBackgroundData };

@@ -1,6 +1,6 @@
-import data from "../../handleWeatherData.js";
+import weatherState from "../../weatherState.js";
 
-function getCurrentDayNextHours() {
+function getCurrentDayNextHours(data) {
   const currentHour = new Date(data.current.last_updated).getHours();
   const currentDayHours = data.forecast.forecastday[0].hour;
 
@@ -15,7 +15,7 @@ function getCurrentDayNextHours() {
   return nextHoursWithDayTitle;
 }
 
-function getRestOfNextHours() {
+function getRestOfNextHours(data) {
   const currentHour = new Date(data.current.last_updated).getHours();
   const nextDayHours = data.forecast.forecastday[1].hour;
 
@@ -30,10 +30,12 @@ function getRestOfNextHours() {
   return nextHoursWithDayTitle;
 }
 
-function getNextHours() {
-  const nextHours = [getCurrentDayNextHours(), getRestOfNextHours()];
+function getNextHours(data) {
+  const nextHours = [getCurrentDayNextHours(data), getRestOfNextHours(data)];
 
   return nextHours.flat();
 }
+
+weatherState.subscribe(getNextHours);
 
 export { getNextHours };

@@ -1,4 +1,5 @@
 import { getFullTime } from "../../helpers/handleDateFormat.js";
+import { search } from "../../helpers/search.js";
 
 function openSearchField(e) {
   const searchContainer = document.querySelector(".weather-search");
@@ -13,7 +14,7 @@ function openSearchField(e) {
   } else {
     searchContainer.classList.toggle("show-search");
 
-    alert(searchField.value);
+    search(searchField.value);
 
     searchField.value = "";
   }

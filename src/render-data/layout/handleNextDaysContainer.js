@@ -1,10 +1,10 @@
 import { generateNextDays } from "../generators/generateNextDays.js";
 import scrollGrab from "../../helpers/scrollGrab.js";
 
-function handleNextDaysContainer() {
+function handleNextDaysContainer(data) {
   scrollGrab("next-days");
 
-  generateNextDays();
+  generateNextDays(data);
 }
 
 export { handleNextDaysContainer };

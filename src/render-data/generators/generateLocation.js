@@ -2,39 +2,38 @@ import { createElement } from "../../helpers/createElement.js";
 import { getFullDate, getFullTime } from "../../helpers/handleDateFormat.js";
 import { handleLocationData } from "../../fetch-data/current-data/handleLocationData.js";
 
-const locationData = handleLocationData();
-
-function handleLocationTime(element) {
+function handleLocationTime(element, data) {
   setInterval(
     () =>
-      (element.innerHTML = `${getFullDate(
-        locationData.localTime()
-      )}, ${getFullTime(locationData.localTime())}`),
+      (element.innerHTML = `${getFullDate(data.localTime())}, ${getFullTime(
+        data.localTime()
+      )}`),
     1000
   );
 }
 
-function handleLocationCity(element) {
-  element.innerHTML = `<span class="current-city">${locationData.cityName()}</span>
+function handleLocationCity(element, data) {
+  element.innerHTML = `<span class="current-city">${data.cityName()}</span>
                         <div class="region-coords">
-                            <span class="current-coords">Coords: ${locationData.coords()}</span>
-                            <span class="current-region">Region: ${locationData.region()}</span>
+                            <span class="current-coords">Coords: ${data.coords()}</span>
+                            <span class="current-region">Region: ${data.region()}</span>
                         </div>
-                        <span class="current-country">${locationData.countryName()}</span>
+                        <span class="current-country">${data.countryName()}</span>
                         <div class="sun-status">
                             <span class="sunrise">
                                 <span class="material-symbols-outlined">water_lux</span>
-                                ${locationData.sunrise()}
+                                ${data.sunrise()}
                             </span>
                             <span class="sunset">
                                 <span class="material-symbols-outlined">wb_twilight</span>
-                                ${locationData.sunset()}
+                                ${data.sunset()}
                             </span>
                         </div>
                         `;
 }
 
-function generateLocation() {
+function generateLocation(data) {
+  const locationData = handleLocationData(data);
   try {
     if (!locationData) {
       throw new Error("Failed to generate location data");
@@ -44,12 +43,12 @@ function generateLocation() {
     const weatherLocation = document.querySelector(".weather-location");
 
     const locationTime = createElement("span", { class: "location-time" });
-    handleLocationTime(locationTime);
+    handleLocationTime(locationTime, locationData);
 
     const locationCity = createElement("div", {
       class: "weather-location-city",
     });
-    handleLocationCity(locationCity);
+    handleLocationCity(locationCity, locationData);
 
     framgent.append(locationTime, locationCity);
     weatherLocation.append(framgent);

@@ -1,9 +1,9 @@
 import { handleNextHours } from "../../fetch-data/future-data/next-hours/handleNextHours.js";
 import { createElement } from "../../helpers/createElement.js";
 
-const nextHoursData = handleNextHours();
+function generateNextHours(data) {
+  const nextHoursData = handleNextHours(data);
 
-function generateNextHours() {
   const fragment = new DocumentFragment();
   const nextHoursCardContainer = document.querySelector(".next-hours");
 

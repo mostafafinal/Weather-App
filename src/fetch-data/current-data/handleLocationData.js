@@ -1,6 +1,6 @@
-import data from "../handleWeatherData.js";
+import weatherState from "../weatherState.js";
 
-function handleLocationData() {
+function handleLocationData(data) {
   try {
     if (!data) {
       throw new Error("Invalid Location From The Handle");
@@ -25,5 +25,7 @@ function handleLocationData() {
     alert(err);
   }
 }
+
+weatherState.subscribe(handleLocationData);
 
 export { handleLocationData };

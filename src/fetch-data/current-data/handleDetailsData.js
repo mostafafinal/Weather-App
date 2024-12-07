@@ -1,6 +1,6 @@
-import data from "../handleWeatherData.js";
+import weatherState from "../weatherState.js";
 
-function handleDetailsData() {
+function handleDetailsData(data) {
   try {
     if (!data) {
       throw new Error("Error From The API Happens In Details Functionality");
@@ -29,5 +29,7 @@ function handleDetailsData() {
     alert(err);
   }
 }
+
+weatherState.subscribe(handleDetailsData);
 
 export { handleDetailsData };

@@ -29,10 +29,12 @@ function NeededDataHandler(hour) {
   };
 }
 
-function handleNextHours() {
-  const data = getNextHours().map((hour) => NeededDataHandler(hour));
+function handleNextHours(data) {
+  const nextHourData = getNextHours(data).map((hour) =>
+    NeededDataHandler(hour)
+  );
 
-  return data;
+  return nextHourData;
 }
 
 export { handleNextHours };

@@ -1,6 +1,6 @@
-import data from "../handleWeatherData.js";
+import weatherState from "../weatherState.js";
 
-function handleConditionData() {
+function handleConditionData(data) {
   try {
     if (!data) {
       throw new Error("Error From The API Happens In Condition Functionality");
@@ -26,5 +26,7 @@ function handleConditionData() {
     alert(err);
   }
 }
+
+weatherState.subscribe(handleConditionData);
 
 export { handleConditionData };

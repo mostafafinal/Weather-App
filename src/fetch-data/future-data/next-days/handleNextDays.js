@@ -28,8 +28,8 @@ function NeededDataHandler(day) {
   };
 }
 
-function handleNextDays() {
-  return getNextDays().map((day) => NeededDataHandler(day));
+function handleNextDays(data) {
+  return getNextDays(data).map((day) => NeededDataHandler(day));
 }
 
 export { handleNextDays };

@@ -1,10 +1,10 @@
 import { generateNextHours } from "../generators/generateNextHours.js";
 import scrollGrab from "../../helpers/scrollGrab.js";
 
-function handleNextHoursContainer() {
+function handleNextHoursContainer(data) {
   scrollGrab("next-hours");
 
-  generateNextHours();
+  generateNextHours(data);
 }
 
 export { handleNextHoursContainer };
