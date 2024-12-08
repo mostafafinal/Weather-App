@@ -5,6 +5,7 @@
   --icon-bg-color: #99d8ff;
   --cards-color: hsl(240deg 27% 19% / 14%);
   --backdrop: blur(7px);
+  container: root / inline-size;
 }
 
 * {
@@ -25,8 +26,13 @@ body {
   -webkit-font-smoothing: antialiased;
   color: var(--text-color);
   height: 1000vh;
-  padding-top: 60px;
+  padding-top: 70px;
   container: body / inline-size;
+}
+@container root (max-width: 47.9375rem) {
+  body {
+    padding-top: 60px;
+  }
 }
 
 img,
@@ -150,7 +156,7 @@ header {
   backdrop-filter: var(--backdrop);
   gap: 1rem;
   padding: 0px 290px;
-  height: 60px;
+  height: 65px;
   width: 100%;
   left: 50%;
   top: 0;
@@ -163,7 +169,7 @@ header {
       align-items: center;
       background-color: var(--btns-bg-color);
       color: var(--text-color);
-      padding: 2px 15px;
+      padding: 7px 30px;
       border-radius: 2rem;
       span {
         color: #ff4200;
@@ -182,7 +188,7 @@ header {
           border-color: transparent;
           background-color: var(--text-color);
           border-radius: 2em;
-          padding: 10px 15px;
+          padding: 13px 15px;
           width: 100%;
           &::placeholder {
             font-size: 1rem;
@@ -206,8 +212,8 @@ header {
             outline-color: var(--text-color);
             border-color: var(--text-color);
           }
-          right: 4px;
-          top: 4px;
+          right: 7px;
+          top: 6px;
           height: 32px;
           width: 32px;
           border-radius: 50%;
@@ -238,7 +244,7 @@ header {
     background-color: var(--btns-bg-color);
     color: var(--text-color);
     border-radius: 2rem;
-    padding: 5px 10px;
+    padding: 7px 10px;
     font-size: 1.1rem;
     .unit {
       margin-left: 7px;
@@ -250,6 +256,11 @@ header {
   header {
     padding: 0 50px;
     gap: 0.5rem;
+    .weather-logo {
+      .weather-logo-name {
+        padding: 4px 15px;
+      }
+    }
     .weather-local-time {
       display: none;
     }
@@ -267,7 +278,12 @@ header {
         width: 100%;
         .form-group {
           width: 100%;
+          .city-search-field {
+            padding: 9px 15px;
+          }
           .submit-form {
+            right: 4px;
+            top: 4.2px;
             outline: solid 0.3rem var(--text-color);
           }
         }
