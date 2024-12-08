@@ -8,7 +8,7 @@ const handleConditionText = (conditionText) => {
   } else if (conditionText.includes("rain")) {
     return "rainy";
   } else if (conditionText.includes("thunder")) {
-    return "thundary";
+    return "thundery";
   } else if (conditionText.includes("snow")) {
     return "snowy";
   }
