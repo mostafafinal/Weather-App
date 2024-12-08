@@ -132,6 +132,66 @@ main {
     font-weight: 500;
   }
 }
+
+.loader {
+  position: fixed;
+  z-index: 999999;
+  background: rgba(36, 36, 62, 0.56);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  -webkit-backdrop-filter: blur(7px);
+  backdrop-filter: blur(7px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.21s cubic-bezier(0.57, -0.57, 0.47, 1.05);
+  transition: opacity 0.21s cubic-bezier(0.57, -0.57, 0.47, 1.05);
+}
+
+.loader.open {
+  pointer-events: all;
+  opacity: 1;
+  visibility: visible;
+}
+
+.loader .loader-container {
+  border-radius: 1.3125rem;
+  background: rgba(0, 0, 0, 0);
+  -webkit-box-shadow: 0 0 0.4375rem 0 rgba(36, 36, 62, 0.56),
+    0 0 0 0.875rem #e5f5ff;
+  box-shadow: 0 0 0.4375rem 0 rgba(36, 36, 62, 0.56), 0 0 0 0.875rem #e5f5ff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.loader .loader-container dotlottie-player {
+  height: 16rem !important;
+  width: 16rem !important;
+}
 /* End Global */
 
 /* Start Header */
