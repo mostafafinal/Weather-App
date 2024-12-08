@@ -1,5 +1,3 @@
-import weatherState from "../../weatherState.js";
-
 function getCurrentDayNextHours(data) {
   const currentHour = new Date(data.current.last_updated).getHours();
   const currentDayHours = data.forecast.forecastday[0].hour;
@@ -35,7 +33,5 @@ function getNextHours(data) {
 
   return nextHours.flat();
 }
-
-weatherState.subscribe(getNextHours);
 
 export { getNextHours };

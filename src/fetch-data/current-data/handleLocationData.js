@@ -1,5 +1,3 @@
-import weatherState from "../weatherState.js";
-
 function handleLocationData(data) {
   try {
     if (!data) {
@@ -25,7 +23,5 @@ function handleLocationData(data) {
     alert(err);
   }
 }
-
-weatherState.subscribe(handleLocationData);
 
 export { handleLocationData };

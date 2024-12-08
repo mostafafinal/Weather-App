@@ -1,5 +1,3 @@
-import weatherState from "../weatherState.js";
-
 const handleConditionText = (conditionText) => {
   if (conditionText.split(" ").length === 1) {
     return conditionText;
@@ -27,7 +25,5 @@ const handleBackgroundData = (data) => {
 
   return { getBgImage, getBgMode };
 };
-
-weatherState.subscribe(handleBackgroundData);
 
 export { handleBackgroundData };

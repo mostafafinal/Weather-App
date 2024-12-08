@@ -1,5 +1,3 @@
-import weatherState from "../../weatherState.js";
-
 function getNextDays(data) {
   const currDay = new Date(data.current.last_updated).getDate();
   const nextDays = data.forecast.forecastday.filter(
@@ -8,7 +6,5 @@ function getNextDays(data) {
 
   return nextDays;
 }
-
-weatherState.subscribe(getNextDays);
 
 export { getNextDays };

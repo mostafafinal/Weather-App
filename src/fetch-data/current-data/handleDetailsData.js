@@ -1,5 +1,3 @@
-import weatherState from "../weatherState.js";
-
 function handleDetailsData(data) {
   try {
     if (!data) {
@@ -29,7 +27,5 @@ function handleDetailsData(data) {
     alert(err);
   }
 }
-
-weatherState.subscribe(handleDetailsData);
 
 export { handleDetailsData };

@@ -1,4 +1,3 @@
-import { updateScreen } from "../render-data/updateScreen.js";
 import weatherData from "./weatherState.js";
 
 const fetchWeatherAPI = async (location = "cairo") => {
@@ -11,15 +10,14 @@ const fetchWeatherAPI = async (location = "cairo") => {
     );
 
     if (hitAPI.status == 400) {
-      throw new Error("Invalid Location From FetchData");
+      throw new Error("Invalid Location");
     }
 
     const allWeatherData = await hitAPI.json();
 
     weatherData.setData(allWeatherData);
-    updateScreen();
   } catch (err) {
-    console.log(err);
+    alert(err);
   }
 };
 

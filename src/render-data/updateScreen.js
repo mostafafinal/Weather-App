@@ -1,6 +1,3 @@
-import weatherState from "../fetch-data/weatherState.js";
-import { screenController } from "./screenController.js";
-
 function removeWeatherContainer() {
   const weatherLocation = document.querySelector(".weather-location");
   const weatherCurrCondition = document.querySelector(".weather-current .now");
@@ -27,8 +24,6 @@ function updateScreen() {
   removeWeatherContainer();
   removeNextHoursContainer();
   removeNextDaysContainer();
-
-  screenController(weatherState.data);
 }
 
 export { updateScreen };
