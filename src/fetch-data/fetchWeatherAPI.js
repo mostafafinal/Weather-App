@@ -2,7 +2,7 @@ import { hideLoader, showLoader } from "../helpers/handleLoader.js";
 import weatherData from "./weatherState.js";
 
 const fetchWeatherAPI = async (location = "cairo") => {
-  const API_KEY = "0ed88fd0e42a43e9ace201337240811";
+  const API_KEY = process.env.WEATHER_API_KEY;
 
   try {
     showLoader();
