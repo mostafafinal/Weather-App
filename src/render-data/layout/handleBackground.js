@@ -5,9 +5,10 @@ function handleBackground(data) {
 
   const body = document.body;
   const weatherContainerBg = document.querySelector(".bg-image img");
-  const imgSrc = `assets/imgs/bg_${bgData.getBgImage()}.jpg`;
+  const imgSrc = `assets/imgs/bg_${bgData.getBgImage()}.WebP`;
 
   weatherContainerBg.src = imgSrc;
+  weatherContainerBg.alt = `${bgData.getBgImage()}`;
 
   body.classList.add(`${bgData.getBgMode()}`);
 }

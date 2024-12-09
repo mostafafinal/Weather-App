@@ -9,7 +9,7 @@ function handleCurrentTemp(element, data) {
 }
 
 function handleCurrentCondition(element, data) {
-  element.innerHTML = `<img class="condition-icon" src="assets/icons/${data.conditionIconCode()}.svg" alt="Condition Icon" />
+  element.innerHTML = `<img class="condition-icon" src="assets/icons/${data.conditionIconCode()}.svg" alt="${data.conditionText()}" />
                       <span class="condition-text">${data.conditionText()}</span>`;
 }
 
