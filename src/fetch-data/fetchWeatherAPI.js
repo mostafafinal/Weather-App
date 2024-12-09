@@ -2,13 +2,11 @@ import { hideLoader, showLoader } from "../helpers/handleLoader.js";
 import weatherData from "./weatherState.js";
 
 const fetchWeatherAPI = async (location = "cairo") => {
-  const API_KEY = process.env.WEATHER_API_KEY;
-
   try {
     showLoader();
 
     const hitAPI = await fetch(
-      `https://api.weatherapi.com/v1/forecast.json?q=${location}&days=3&key=${API_KEY}`,
+      `/.netlify/functions/weatherAPI?location=${location}`,
       { mode: "cors" }
     );
 
