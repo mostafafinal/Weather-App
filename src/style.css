@@ -93,7 +93,7 @@ body .day-night-gradient-background {
     #3f62bd 70%,
     #5a7fb6 98%
   );
-  z-index: 0;
+  z-index: -1;
   height: 200%;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
