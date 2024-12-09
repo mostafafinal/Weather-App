@@ -5,25 +5,28 @@ import { screenController } from "./render-data/screenController.js";
 import { updateScreen } from "./render-data/updateScreen.js";
 import "./style.css";
 
-weatherState.subscribe(screenController);
+document.addEventListener("DOMContentLoaded", async function () {
+  handleHeader();
 
-await fetchWeatherAPI();
+  weatherState.subscribe(screenController);
 
-const refreshBtn = document.querySelector(".title-refresh");
-refreshBtn.addEventListener("click", refreshScreen);
+  await fetchWeatherAPI();
 
-function rotateBtn() {
-  refreshBtn.style.transform = "rotate(360deg)";
+  const refreshBtn = document.querySelector(".title-refresh");
 
-  setTimeout(() => (refreshBtn.style.transform = "rotate(0deg)"), 1000);
-}
+  function rotateBtn() {
+    refreshBtn.style.transform = "rotate(360deg)";
 
-function refreshScreen() {
-  rotateBtn();
+    setTimeout(() => (refreshBtn.style.transform = "rotate(0deg)"), 1000);
+  }
 
-  updateScreen();
+  function refreshScreen() {
+    rotateBtn();
 
-  fetchWeatherAPI(weatherState.location);
-}
+    updateScreen();
 
-handleHeader();
+    fetchWeatherAPI(weatherState.location);
+  }
+
+  refreshBtn.addEventListener("click", refreshScreen);
+});
