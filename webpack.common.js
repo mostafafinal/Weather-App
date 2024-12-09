@@ -18,7 +18,9 @@ export default {
     new CopyPlugin({
       patterns: [{ from: "src/assets", to: "assets" }],
     }),
-    new DotenvWebpackPlugin(),
+    new DotenvWebpackPlugin({
+      systemvars: true,
+    }),
   ],
   module: {
     rules: [
