@@ -3,6 +3,7 @@ import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
 import path from "path";
 import CopyPlugin from "copy-webpack-plugin";
 import DotenvWebpackPlugin from "dotenv-webpack";
+import TerserPlugin from "terser-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import CompressionPlugin from "compression-webpack-plugin";
 
@@ -56,6 +57,15 @@ export default {
   optimization: {
     minimize: true,
     minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          compress: {
+            drop_console: true,
+            unused: true,
+            dead_code: true,
+          },
+        },
+      }),
       new CssMinimizerPlugin({
         minimizerOptions: {
           preset: [
