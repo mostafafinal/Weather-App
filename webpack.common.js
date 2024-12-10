@@ -3,6 +3,7 @@ import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
 import path from "path";
 import CopyPlugin from "copy-webpack-plugin";
 import DotenvWebpackPlugin from "dotenv-webpack";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 export default {
   entry: "./src/main.js",
@@ -14,6 +15,13 @@ export default {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.html",
+      scriptLoading: "defer",
+      minify: {
+        collapseWhitespace: true,
+      },
+    }),
+    new MiniCssExtractPlugin({
+      filename: "[name].[contenthash].css",
     }),
     new CopyPlugin({
       patterns: [{ from: "src/assets", to: "assets" }],
@@ -30,7 +38,12 @@ export default {
       },
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        use: [
+          process.env.NODE_ENV === "production"
+            ? MiniCssExtractPlugin.loader
+            : "style-loader",
+          "css-loader",
+        ],
       },
     ],
   },
@@ -38,7 +51,14 @@ export default {
     minimize: true,
     minimizer: [
       new CssMinimizerPlugin({
-        test: /\.css$/i,
+        minimizerOptions: {
+          preset: [
+            "default",
+            {
+              discardComments: { removeAll: true },
+            },
+          ],
+        },
       }),
     ],
   },
