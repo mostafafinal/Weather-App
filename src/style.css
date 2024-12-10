@@ -48,19 +48,38 @@
 }
 
 body {
+  position: relative;
   font-family: "Poppins", serif;
-  -webkit-font-display: swap;
-  font-display: swap;
-  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  height: 100dvh;
+  line-height: 1.5;
   color: var(--text-color);
-  height: 100vh;
-  padding-top: 70px;
+  padding: 70px 290px 0;
   container: body / inline-size;
 }
 @container root (max-width: 47.9375rem) {
   body {
     padding-top: 60px;
+  }
+}
+@container root (max-width: 47.9375rem) {
+  body {
+    padding: 65px 50px 0;
+  }
+}
+@container root (min-width: 48rem) and (max-width: 61.9375rem) {
+  body {
+    padding: 65px 100px 0;
+  }
+}
+@container root (min-width: 62rem) and (max-width: 74.9375rem) {
+  body {
+    padding: 65px 130px 0;
+  }
+}
+@container root (min-width: 75rem) and (max-width: 87.5rem) {
+  body {
+    padding: 65px 150px 0;
   }
 }
 
@@ -75,7 +94,8 @@ button {
 }
 
 p,
-h1 {
+h1,
+h2 {
   overflow-wrap: break-word;
 }
 
@@ -112,38 +132,26 @@ body.imerial {
 }
 
 body .day-night-gradient-background {
-  -webkit-font-display: swap;
-  font-display: swap;
-  will-change: top;
   position: fixed;
   left: 0;
-  width: var(--handup);
+  top: -100%;
   background: linear-gradient(
     to bottom,
-    #11111d 7%,
-    #182d53 49%,
-    #3e62bb 70%,
-    #587eb6 98%
+    hsl(240, 26%, 9%) 7%,
+    hsl(219, 55%, 21%) 49%,
+    hsl(223, 50%, 49%) 70%,
+    hsl(216, 39%, 53%) 98%
   );
-  z-index: -1;
-  height: 200%;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
-  top: -100%;
+  width: var(--handup);
+  height: calc(100vh + 100%);
   opacity: 1;
+  z-index: -1;
 }
 
 body.night .day-night-gradient-background {
   top: 0;
-}
-
-main {
-  padding: 0 290px;
-}
-@container body (max-width: 47.9375rem) {
-  main {
-    padding: 0 50px;
-  }
 }
 
 .dual-value {
@@ -238,7 +246,8 @@ header {
   transform: translateX(-50%);
   backdrop-filter: var(--backdrop-7);
   gap: var(--rem-1);
-  padding: 0px 290px;
+  padding: inherit;
+  padding-top: 0;
   height: 65px;
   width: var(--handup);
   left: var(--per50);
@@ -498,7 +507,7 @@ header {
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.8rem;
+        font-size: var(--rem-1o4);
         .condition-text {
           font-weight: var(--fw-500);
         }
@@ -507,7 +516,8 @@ header {
   }
   .weather-current-details {
     grid-area: w-details;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
     gap: var(--o7rem);
     z-index: 2;
     .current-detail {
@@ -517,7 +527,7 @@ header {
       justify-content: space-between;
       backdrop-filter: var(--backdrop-3);
       background-color: hsla(240, 27%, 19%, 0.2);
-      width: var(--handup);
+      /* width: var(--handup); */
       padding: var(--px-14);
       margin-top: 5rem;
       gap: 0.2rem;
@@ -577,7 +587,7 @@ header {
           display: none;
         }
         .current-country {
-          margin-top: var(--o8rem);
+          margin-top: 0;
           justify-content: center;
         }
         .sun-status {
@@ -601,7 +611,7 @@ header {
         .weather-current-condition {
           flex-direction: column;
           font-size: var(--o8rem);
-          padding-bottom: 2rem;
+          padding-bottom: 4rem;
           .condition-icon {
             width: 6.25rem;
             height: auto;
@@ -610,22 +620,21 @@ header {
       }
     }
     .weather-current-details {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(2, 1fr);
       backdrop-filter: var(--backdrop-3);
       background-color: hsla(240, 27%, 19%, 0.2);
       gap: var(--o4rem);
       padding: var(--px-15);
       margin-top: var(--px-10);
       border-radius: var(--px-20);
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
       .current-detail {
         margin: 0;
         padding: 8px;
         .current-detail-icon {
-          font-size: clamp(var(--o7rem), 0.1rem + 2vw, var(--rem-1));
           flex-direction: column;
           text-align: center;
+          font-size: clamp(var(--o7rem), 0.1rem + 2vw, var(--rem-1));
         }
         .detail-value {
           font-size: var(--o9rem);
@@ -804,8 +813,6 @@ footer {
   position: relative;
   text-align: center;
   font-style: italic;
-  -webkit-font-display: swap;
-  font-display: swap;
   font-size: var(--o7rem);
   font-weight: var(--fw-600);
   padding: 25px 50px var(--px-14);
