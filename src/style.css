@@ -1,11 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap");
-/* Start Global */
 :root {
-  --text-color: #e5f5ff;
-  --btns-bg-color: #24243e;
-  --icon-bg-color: #99d8ff;
+  --text-color: hsl(203, 100%, 95%);
+  --btns-bg-color: hsl(240, 27%, 19%);
+  --icon-bg-color: hsl(203, 100%, 80%);
   --cards-color: hsl(240deg 27% 19% / 14%);
-  --backdrop: blur(7px);
+  --backdrop-7: blur(7px);
+  --backdrop-3: blur(3px);
+  --cubic-bezier: cubic-bezier(0.57, -0.57, 0.47, 1.05);
+  --opacity-42: 0.42;
+  --opacity-56: 0.56;
+  --fw-700: 700;
+  --fw-600: 600;
+  --fw-500: 500;
+  --rem-1o1: 1.1rem;
+  --rem-1: 1rem;
+  --o9rem: 0.9rem;
+  --o875rem: 0.875rem;
+  --o8rem: 0.8rem;
+  --o7rem: 0.7rem;
+  --o5rem: 0.5rem;
+  --o4rem: 0.4rem;
+  --o25rem: 0.25rem;
+  --px-15: 15px;
+  --px-14: 14px;
+  --px-7: 7px;
+  --handup: 100%;
+  --per50: 50%;
   container: root / inline-size;
 }
 
@@ -23,6 +43,7 @@
 
 body {
   font-family: "Poppins", serif;
+  -webkit-font-display: swap;
   font-display: swap;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -39,7 +60,7 @@ body {
 
 img {
   display: block;
-  max-width: 100%;
+  max-width: var(--handup);
 }
 
 input,
@@ -85,20 +106,21 @@ body.imerial {
 }
 
 body .day-night-gradient-background {
-  font-display: swap;
+  /* -webkit-font-display: swap;
+  font-display: swap; */
   will-change: top;
   position: fixed;
   left: 0;
-  width: 100%;
+  width: var(--handup);
   background: linear-gradient(
     to bottom,
-    #11111d 7%,
-    #182d53 49%,
-    #3f62bd 70%,
-    #5a7fb6 98%
+    hsl(240, 26%, 9%) 7%,
+    hsl(219, 55%, 21%) 49%,
+    hsl(223, var(--per50), 49%) 70%,
+    hsl(216, 39%, 53%) 98%
   );
   z-index: -1;
-  height: 200%;
+  height: calc(var(--handup) * 2);
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
   top: -100%;
@@ -125,30 +147,30 @@ main {
   overflow: hidden;
   height: 7rem;
   font-size: 6rem;
-  font-weight: 500;
+  font-weight: var(--fw-500);
   .metric,
   .imperial {
     will-change: transform;
-    transition: transform 0.3s cubic-bezier(0.57, -0.57, 0.47, 1.05);
+    transition: transform 0.3s var(--cubic-bezier);
   }
   .unit {
     vertical-align: top;
     font-size: 5rem;
-    font-weight: 500;
+    font-weight: var(--fw-500);
   }
 }
 
 .loader {
   position: fixed;
   z-index: 999999;
-  background: rgba(36, 36, 62, 0.56);
+  background: hsla(240, 27%, 19%, var(--opacity-56));
   top: 0;
   left: 0;
-  width: 100%;
+  width: var(--handup);
   height: 100vh;
   height: 100dvh;
-  -webkit-backdrop-filter: blur(7px);
-  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: var(--backdrop-7);
+  backdrop-filter: var(--backdrop-7);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -161,8 +183,8 @@ main {
   pointer-events: none;
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: opacity 0.21s cubic-bezier(0.57, -0.57, 0.47, 1.05);
-  transition: opacity 0.21s cubic-bezier(0.57, -0.57, 0.47, 1.05);
+  -webkit-transition: opacity 0.21s var(--cubic-bezier);
+  transition: opacity 0.21s var(--cubic-bezier);
 }
 
 .loader.open {
@@ -173,10 +195,11 @@ main {
 
 .loader .loader-container {
   border-radius: 1.3125rem;
-  background: rgba(0, 0, 0, 0);
-  -webkit-box-shadow: 0 0 0.4375rem 0 rgba(36, 36, 62, 0.56),
-    0 0 0 0.875rem #e5f5ff;
-  box-shadow: 0 0 0.4375rem 0 rgba(36, 36, 62, 0.56), 0 0 0 0.875rem #e5f5ff;
+  background: hsla(0, 0%, 0%, 0);
+  -webkit-box-shadow: 0 0 0.4375rem 0 hsla(240, 27%, 19%, var(--opacity-56)),
+    0 0 0 var(--o875rem) hsl(203, 100%, 95%);
+  box-shadow: 0 0 0.4375rem 0 hsla(240, 27%, 19%, var(--opacity-56)),
+    0 0 0 var(--o875rem) hsl(203, 100%, 95%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -207,14 +230,14 @@ header {
   align-items: center;
   justify-content: space-between;
   transform: translateX(-50%);
-  backdrop-filter: var(--backdrop);
-  gap: 1rem;
+  backdrop-filter: var(--backdrop-7);
+  gap: var(--rem-1);
   padding: 0px 290px;
   height: 65px;
-  width: 100%;
-  left: 50%;
+  width: var(--handup);
+  left: var(--per50);
   top: 0;
-  font-size: 0.7rem;
+  font-size: var(--o7rem);
   z-index: 3;
   .weather-logo {
     display: flex;
@@ -223,11 +246,11 @@ header {
       align-items: center;
       background-color: var(--btns-bg-color);
       color: var(--text-color);
-      padding: 7px 30px;
+      padding: var(--px-7) 30px;
       border-radius: 2rem;
       span {
-        color: #ff4200;
-        margin-left: 7px;
+        color: hsl(16, 100%, 50%);
+        margin-left: var(--px-7);
       }
     }
   }
@@ -242,10 +265,10 @@ header {
           border-color: transparent;
           background-color: var(--text-color);
           border-radius: 2em;
-          padding: 13px 15px;
-          width: 100%;
+          padding: 13px var(--px-15);
+          width: var(--handup);
           &::placeholder {
-            font-size: 1rem;
+            font-size: var(--rem-1);
           }
           &:focus-visible,
           &:focus {
@@ -266,11 +289,11 @@ header {
             outline-color: var(--text-color);
             border-color: var(--text-color);
           }
-          right: 7px;
+          right: var(--px-7);
           top: 6px;
           height: 32px;
           width: 32px;
-          border-radius: 50%;
+          border-radius: var(--per50);
           z-index: 1;
         }
       }
@@ -282,7 +305,7 @@ header {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.1rem;
+      font-size: var(--rem-1o1);
       &:not(&.divider) {
         width: 1.72rem;
       }
@@ -298,10 +321,10 @@ header {
     background-color: var(--btns-bg-color);
     color: var(--text-color);
     border-radius: 2rem;
-    padding: 7px 10px;
-    font-size: 1.1rem;
+    padding: var(--px-7) 10px;
+    font-size: var(--rem-1o1);
     .unit {
-      margin-left: 7px;
+      margin-left: var(--px-7);
       width: 1.3625rem;
     }
   }
@@ -309,10 +332,10 @@ header {
 @container body (max-width: 47.9375rem) {
   header {
     padding: 0 50px;
-    gap: 0.5rem;
+    gap: var(--o5rem);
     .weather-logo {
       .weather-logo-name {
-        padding: 4px 15px;
+        padding: 4px var(--px-15);
       }
     }
     .weather-local-time {
@@ -326,14 +349,14 @@ header {
       width: 2.5rem;
       z-index: 2;
       &.show-search {
-        width: calc(100% - 6.1rem);
+        width: calc(var(--handup) - 6.1rem);
       }
       .form {
-        width: 100%;
+        width: var(--handup);
         .form-group {
-          width: 100%;
+          width: var(--handup);
           .city-search-field {
-            padding: 9px 15px;
+            padding: 9px var(--px-15);
           }
           .submit-form {
             right: 4px;
@@ -363,11 +386,11 @@ header {
   grid-area: title;
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: var(--o4rem);
   margin-bottom: 1.3rem;
   z-index: 2;
   font-size: 1.7rem;
-  font-weight: 600;
+  font-weight: var(--fw-600);
   .title-refresh,
   .title-locate {
     cursor: pointer;
@@ -380,8 +403,8 @@ header {
     transition: transform 0.3s ease-out;
     width: 2.1rem;
     height: 2.1rem;
-    padding: 7px;
-    border-radius: 50%;
+    padding: var(--px-7);
+    border-radius: var(--per50);
     .icon {
       font-size: 1.3125rem;
     }
@@ -389,12 +412,12 @@ header {
 }
 @container body (max-width: 47.9375rem) {
   .title {
-    font-size: 1rem;
+    font-size: var(--rem-1);
     .title-refresh {
       margin-left: auto;
     }
     .title-locate {
-      margin-left: 1rem;
+      margin-left: var(--rem-1);
     }
   }
 }
@@ -411,13 +434,13 @@ header {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center bottom;
-    top: 50%;
-    left: 50%;
+    top: var(--per50);
+    left: var(--per50);
     transform: translate(-50%, -50%);
     width: 105%;
-    height: 100%;
+    height: var(--handup);
     border-radius: 20px;
-    opacity: 0.56;
+    opacity: var(--opacity-56);
     z-index: 1;
   }
 
@@ -425,22 +448,22 @@ header {
     grid-area: w-location;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    font-size: 0.9rem;
-    font-weight: 500;
+    gap: var(--o5rem);
+    font-size: var(--o9rem);
+    font-weight: var(--fw-500);
     z-index: 2;
     .weather-location-city {
       .current-city {
         font-size: 4rem;
-        font-weight: 600;
-        margin-bottom: 1rem;
+        font-weight: var(--fw-600);
+        margin-bottom: var(--rem-1);
       }
       .current-country {
         display: flex;
         align-items: center;
-        gap: 0.4rem;
-        font-size: 1.1rem;
-        margin-top: 1rem;
+        gap: var(--o4rem);
+        font-size: var(--rem-1o1);
+        margin-top: var(--rem-1);
       }
       .sun-status {
         display: flex;
@@ -450,7 +473,7 @@ header {
         span {
           display: flex;
           align-items: center;
-          gap: 0.4rem;
+          gap: var(--o4rem);
           svg {
             margin-bottom: 0.2rem;
             path {
@@ -470,33 +493,35 @@ header {
         align-items: center;
         justify-content: center;
         font-size: 1.8rem;
-        font-weight: 500;
+        .condition-text {
+          font-weight: var(--fw-500);
+        }
       }
     }
   }
   .weather-current-details {
     grid-area: w-details;
     display: flex;
-    gap: 0.7rem;
+    gap: var(--o7rem);
     z-index: 2;
     .current-detail {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
-      backdrop-filter: blur(3px);
-      background-color: rgba(36, 36, 62, 0.2);
-      width: 100%;
-      padding: 14px;
+      backdrop-filter: var(--backdrop-3);
+      background-color: hsla(240, 27%, 19%, 0.2);
+      width: var(--handup);
+      padding: var(--px-14);
       margin-top: 5rem;
       gap: 0.2rem;
       border-radius: 20px;
-      font-weight: 500;
+      font-weight: var(--fw-500);
       .current-detail-icon {
         display: flex;
         align-items: center;
         gap: 0.3rem;
-        font-size: 0.8rem;
+        font-size: var(--o8rem);
       }
       .detail-value {
         font-size: 1.5rem;
@@ -510,9 +535,9 @@ header {
         .unit {
           vertical-align: text-bottom;
           margin-left: 4px;
-          font-size: 0.9rem;
-          font-weight: 700;
-          opacity: 0.42;
+          font-size: var(--o9rem);
+          font-weight: var(--fw-700);
+          opacity: var(--opacity-42);
         }
         &.wind-dir {
           font-size: 2rem;
@@ -533,7 +558,7 @@ header {
       top: 30%;
       height: 54%;
       img {
-        height: 100%;
+        height: var(--handup);
         object-fit: cover;
       }
     }
@@ -546,11 +571,11 @@ header {
           display: none;
         }
         .current-country {
-          margin-top: 0.8rem;
+          margin-top: var(--o8rem);
           justify-content: center;
         }
         .sun-status {
-          margin-top: 0.8rem;
+          margin-top: var(--o8rem);
           justify-content: center;
         }
       }
@@ -558,7 +583,7 @@ header {
     .weather-current {
       .now {
         .weather-current-temp {
-          margin-top: 0.8rem;
+          margin-top: var(--o8rem);
           .dual-value {
             font-size: 3rem;
             height: 3.5rem;
@@ -582,27 +607,27 @@ header {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: repeat(2, 1fr);
-      backdrop-filter: blur(3px);
-      background-color: rgba(36, 36, 62, 0.2);
-      gap: 0.4rem;
-      padding: 15px;
+      backdrop-filter: var(--backdrop-3);
+      background-color: hsla(240, 27%, 19%, 0.2);
+      gap: var(--o4rem);
+      padding: var(--px-15);
       margin-top: 10px;
       border-radius: 20px;
       .current-detail {
         margin: 0;
         padding: 10px;
         .current-detail-icon {
-          font-size: clamp(0.7rem, 0.1rem + 2vw, 1rem);
+          font-size: clamp(var(--o7rem), 0.1rem + 2vw, var(--rem-1));
           flex-direction: column;
           text-align: center;
         }
         .detail-value {
-          font-size: 0.9rem;
+          font-size: var(--o9rem);
           .dual-value {
             height: 1.3rem;
             .metric,
             .imperial {
-              font-size: 0.9rem;
+              font-size: var(--o9rem);
             }
           }
           .unit {
@@ -610,7 +635,7 @@ header {
             margin-left: 4px;
             font-size: 0.6rem;
             font-weight: 700;
-            opacity: 0.42;
+            opacity: var(--opacity-42);
           }
           &.wind-dir {
             font-size: 1.5rem;
@@ -626,14 +651,14 @@ header {
 /* Start Weather Hours Container */
 .next-hours-container {
   .title {
-    margin-top: 1rem;
+    margin-top: var(--rem-1);
   }
   .next-hours {
     cursor: grab;
     user-select: none;
     display: flex;
     overflow: scroll hidden;
-    gap: 0.5rem;
+    gap: var(--o5rem);
     &.grab-scroll {
       cursor: grabbing;
     }
@@ -642,37 +667,37 @@ header {
       display: flex;
       flex-direction: column;
       text-align: center;
-      backdrop-filter: blur(3px);
-      background-color: rgba(36, 36, 62, 0.2);
-      gap: 0.4rem;
-      border-radius: 14px;
+      backdrop-filter: var(--backdrop-3);
+      background-color: hsla(240, 27%, 19%, 0.2);
+      gap: var(--o4rem);
+      border-radius: var(--px-14);
       flex-shrink: 0;
-      font-weight: 500;
-      padding: 14px;
+      font-weight: var(--fw-500);
+      padding: var(--px-14);
       width: 7.875rem;
       .hour-icon {
         width: 98px;
         height: 98px;
       }
       .hour-condition {
-        font-size: 1rem;
-        font-weight: 500;
+        font-size: var(--rem-1);
+        font-weight: var(--fw-500);
         flex-grow: 1;
       }
       .hour-value {
         display: flex;
-        gap: 0.4rem;
+        gap: var(--o4rem);
         .dual-value {
           height: 1.4rem;
           .metric,
           .imperial,
           .unit {
-            font-size: 1rem;
+            font-size: var(--rem-1);
           }
         }
         &.temp,
         &.percip {
-          margin-bottom: 0.875rem;
+          margin-bottom: var(--o875rem);
         }
       }
     }
@@ -692,14 +717,14 @@ header {
 /* Start Weather Days Container */
 .next-days-container {
   .title {
-    margin-top: 1rem;
+    margin-top: var(--rem-1);
   }
   .next-days {
     cursor: grab;
     user-select: none;
     display: flex;
     overflow: scroll hidden;
-    gap: 0.5rem;
+    gap: var(--o5rem);
     &.grab-scroll {
       cursor: grabbing;
     }
@@ -709,22 +734,22 @@ header {
       flex-direction: column;
       align-items: center;
       text-align: center;
-      backdrop-filter: blur(3px);
-      background-color: rgba(36, 36, 62, 0.2);
-      gap: 0.4rem;
-      border-radius: 14px;
+      backdrop-filter: var(--backdrop-3);
+      background-color: hsla(240, 27%, 19%, 0.2);
+      gap: var(--o4rem);
+      border-radius: var(--px-14);
       flex-shrink: 0;
       flex-grow: 1;
-      font-weight: 500;
-      padding: 15px;
+      font-weight: var(--fw-500);
+      padding: var(--px-15);
       width: 13.125rem;
       .day-icon {
         width: 100px;
         height: 100px;
       }
       .day-condition {
-        margin-bottom: 0.875rem;
-        font-weight: 600;
+        margin-bottom: var(--o875rem);
+        font-weight: var(--fw-600);
         flex-grow: 1;
       }
       .day-details {
@@ -737,22 +762,22 @@ header {
         .detail {
           display: flex;
           .dual-value {
-            margin-left: 0.25rem;
+            margin-left: var(--o25rem);
             height: 1.4rem;
             .metric,
             .imperial,
             .unit {
-              font-size: 1rem;
+              font-size: var(--rem-1);
             }
           }
           .detail-value {
-            margin-left: 0.25rem;
+            margin-left: var(--o25rem);
           }
         }
         .detail-icon,
         .detail-divider {
-          opacity: 0.42;
-          margin-left: 0.25rem;
+          opacity: var(--opacity-42);
+          margin-left: var(--o25rem);
         }
       }
     }
@@ -773,11 +798,12 @@ footer {
   position: relative;
   text-align: center;
   font-style: italic;
+  -webkit-font-display: swap;
   font-display: swap;
-  font-size: 0.7rem;
-  font-weight: 600;
-  padding: 25px 14px 14px;
-  opacity: 0.42;
+  font-size: var(--o7rem);
+  font-weight: var(--fw-600);
+  padding: 25px var(--px-14) var(--px-14);
+  opacity: var(--opacity-42);
   a {
     color: inherit;
   }
