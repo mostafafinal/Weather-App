@@ -6,6 +6,8 @@ import { updateScreen } from "./render-data/updateScreen.js";
 import "./style.css";
 
 document.addEventListener("DOMContentLoaded", async function () {
+  document.body.style.visibility = "visible";
+
   handleHeader();
 
   weatherState.subscribe(screenController);
