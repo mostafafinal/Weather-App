@@ -4,6 +4,7 @@ import path from "path";
 import CopyPlugin from "copy-webpack-plugin";
 import DotenvWebpackPlugin from "dotenv-webpack";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import CompressionPlugin from "compression-webpack-plugin";
 
 export default {
   entry: "./src/main.js",
@@ -13,6 +14,11 @@ export default {
     clean: true,
   },
   plugins: [
+    new CompressionPlugin({
+      deleteOriginalAssets: false,
+      algorithm: "brotliCompress",
+      test: /\.(js|css|html|svg|WebP)$/,
+    }),
     new HtmlWebpackPlugin({
       template: "./src/index.html",
       scriptLoading: "defer",
