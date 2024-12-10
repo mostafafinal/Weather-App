@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap");
 /* Start Global */
 :root {
   --text-color: #e5f5ff;
@@ -22,6 +23,7 @@
 
 body {
   font-family: "Poppins", serif;
+  font-display: swap;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   color: var(--text-color);
@@ -83,6 +85,8 @@ body.imerial {
 }
 
 body .day-night-gradient-background {
+  font-display: swap;
+  will-change: top;
   position: fixed;
   left: 0;
   width: 100%;
@@ -124,6 +128,7 @@ main {
   font-weight: 500;
   .metric,
   .imperial {
+    will-change: transform;
     transition: transform 0.3s cubic-bezier(0.57, -0.57, 0.47, 1.05);
   }
   .unit {
@@ -403,7 +408,9 @@ header {
   padding: 42px 0;
   .bg-image {
     position: absolute;
-    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -412,10 +419,6 @@ header {
     border-radius: 20px;
     opacity: 0.56;
     z-index: 1;
-    img {
-      height: 100%;
-      width: 100%;
-    }
   }
 
   .weather-location {
@@ -468,10 +471,6 @@ header {
         justify-content: center;
         font-size: 1.8rem;
         font-weight: 500;
-        .condition-icon {
-          width: 11.25rem;
-          max-width: 100%;
-        }
       }
     }
   }
@@ -574,6 +573,7 @@ header {
           padding-bottom: 2rem;
           .condition-icon {
             width: 6.25rem;
+            height: auto;
           }
         }
       }
@@ -773,6 +773,7 @@ footer {
   position: relative;
   text-align: center;
   font-style: italic;
+  font-display: swap;
   font-size: 0.7rem;
   font-weight: 600;
   padding: 25px 14px 14px;

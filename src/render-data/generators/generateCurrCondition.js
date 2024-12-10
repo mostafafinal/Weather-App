@@ -9,8 +9,8 @@ function handleCurrentTemp(element, data) {
 }
 
 function handleCurrentCondition(element, data) {
-  element.innerHTML = `<img class="condition-icon" src="assets/icons/${data.conditionIconCode()}.svg" alt="${data.conditionText()}" />
-                      <span class="condition-text">${data.conditionText()}</span>`;
+  element.innerHTML = `<img class="condition-icon" src="assets/icons/${data.conditionIconCode()}.svg" alt="${data.conditionText()}" height="180px" width="180px"/>
+                      <h2 class="condition-text">${data.conditionText()}</h2>`;
 }
 
 function generateCurrCondition(data) {
