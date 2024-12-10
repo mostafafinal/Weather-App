@@ -16,6 +16,8 @@ function openSearchField(e) {
 
     search(searchField.value);
 
+    searchField.blur();
+
     searchField.value = "";
   }
 }
