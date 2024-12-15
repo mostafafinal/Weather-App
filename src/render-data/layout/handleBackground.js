@@ -10,6 +10,7 @@ function handleBackground(data) {
   weatherContainerBg.style.backgroundImage = imgUrl;
   weatherContainerBg.alt = `${bgData.getBgImage()}`;
 
+  body.classList.remove("day", "night");
   body.classList.add(`${bgData.getBgMode()}`);
 }
 
