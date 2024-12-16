@@ -6,6 +6,7 @@ function openSearchField(e) {
   const searchField = document.querySelector(".city-search-field");
 
   e.preventDefault();
+  e.stopPropagation();
 
   if (searchField.value === "") {
     searchContainer.classList.toggle("show-search");
@@ -20,6 +21,12 @@ function openSearchField(e) {
 
     searchField.value = "";
   }
+}
+
+function handleSearchFieldPropagation() {
+  const searchContainer = document.querySelector(".weather-search");
+
+  searchContainer.classList.add("show-search");
 }
 
 function closeSearchField(e) {
@@ -57,8 +64,10 @@ function changeUnits() {
 
 function toggleSearchField() {
   const searchToggle = document.querySelector(".submit-form");
+  const searchField = document.querySelector(".city-search-field");
 
   searchToggle.addEventListener("click", openSearchField);
+  searchField.addEventListener("click", handleSearchFieldPropagation);
   window.addEventListener("click", closeSearchField);
 }
 
