@@ -1,32 +1,30 @@
 import { getFullTime } from "../../helpers/handleDateFormat.js";
 import { search } from "../../helpers/search.js";
 
-function openSearchField(e) {
+function handleSearchFieldInteraction(e) {
   const searchContainer = document.querySelector(".weather-search");
   const searchField = document.querySelector(".city-search-field");
+
+  searchField.removeEventListener("click", handleSearchFieldInteraction);
 
   e.preventDefault();
   e.stopPropagation();
 
-  if (searchField.value === "") {
-    searchContainer.classList.toggle("show-search");
-
-    searchField.focus();
-  } else {
-    searchContainer.classList.toggle("show-search");
-
+  if (searchField.value !== "") {
     search(searchField.value);
+
+    searchContainer.classList.remove("show-search");
+
+    searchField.value = "";
 
     searchField.blur();
 
-    searchField.value = "";
+    return;
   }
-}
-
-function handleSearchFieldPropagation() {
-  const searchContainer = document.querySelector(".weather-search");
 
   searchContainer.classList.add("show-search");
+
+  searchField.focus();
 }
 
 function closeSearchField(e) {
@@ -63,11 +61,14 @@ function changeUnits() {
 }
 
 function toggleSearchField() {
-  const searchToggle = document.querySelector(".submit-form");
   const searchField = document.querySelector(".city-search-field");
+  const searchIcon = document.querySelector(".form-search-icon");
+  const submitBtn = document.querySelector(".submit-form");
 
-  searchToggle.addEventListener("click", openSearchField);
-  searchField.addEventListener("click", handleSearchFieldPropagation);
+  searchField.addEventListener("click", handleSearchFieldInteraction);
+  submitBtn.addEventListener("click", handleSearchFieldInteraction);
+  searchIcon.addEventListener("click", handleSearchFieldInteraction);
+
   window.addEventListener("click", closeSearchField);
 }
 
